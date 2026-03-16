@@ -29,7 +29,7 @@ function Index() {
             </Nav.Link>
           </Nav>
           <Col xs="auto">
-            <Button type="submit" onClick={()=>navigate("/login")}>Login</Button>
+            <Button type="submit" onClick={()=>navigate("login")}>Login</Button>
           </Col>
         </Container>
       </Navbar>
