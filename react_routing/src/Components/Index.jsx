@@ -27,6 +27,9 @@ function Index() {
             <Nav.Link>
                 <Link to={"contect"}>Contect</Link>
             </Nav.Link>
+             <Nav.Link>
+                <Link to={"person/:id"}>Person</Link>
+            </Nav.Link>
           </Nav>
           <Col xs="auto">
             <Button type="submit" onClick={()=>navigate("login")}>Login</Button>
