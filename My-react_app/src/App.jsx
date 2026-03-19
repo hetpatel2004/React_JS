@@ -17,7 +17,7 @@ let check = true;
 function App() {
   return (
     <>
-      <div>
+      {/* <div>
         <h1>Hello Jsx</h1>
 
         <p>
@@ -46,7 +46,9 @@ function App() {
       </div>
        <div>
       <img src="./car.jpeg" alt="photo" />
-    </div>
+    </div> */}
+
+      <Stu/>
     </>
   );
 }

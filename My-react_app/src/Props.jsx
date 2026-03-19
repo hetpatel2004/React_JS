@@ -1,9 +1,13 @@
 function Stu(name_of_prop) {
-  return (
-    <div>
-      <h1>Student name = {name_of_prop.name}</h1>
-      <h1>Student age = {name_of_prop.age }</h1>
-    </div>
-  );
+
+  const a = 10
+  // if (a>=18) {
+  //   return <h1>true</h1>
+  // }
+  // else{
+  //   return <h1>false</h1>
+  // }
+  return a ? "pass" :"false"
+
 }
 export default Stu ;
