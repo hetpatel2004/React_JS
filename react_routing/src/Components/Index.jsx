@@ -18,7 +18,7 @@ function Index() {
           </Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link>
-                <Link to={"/"}></Link>
+                <Link to={"/"}>index page</Link>
             </Nav.Link>
             <Nav.Link>
                 <Link to={"home"}>Home</Link>
@@ -31,6 +31,9 @@ function Index() {
             </Nav.Link>
              <Nav.Link>
                 <Link to={"person/:id"}>Person</Link>
+            </Nav.Link>
+             <Nav.Link>
+                <Link to={"useeffect"}>useeffect</Link>
             </Nav.Link>
           </Nav>
           <Col xs="auto">
