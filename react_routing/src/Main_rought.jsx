@@ -9,6 +9,7 @@ import Login from "./Components/Login";
 import Person from "./Components/Person";
 import { Suspense } from "react";
 import Useeffect from "./Components/Useeffect";
+import Card01 from "./Components/Card01";
 
 function Main_rought() {
   const Index = lazy(() => import("./Components/Index"));
@@ -33,10 +34,12 @@ function Main_rought() {
             </Suspense>
           }
         />
-        <Route path="person/:id" element={<Person />} />
+        <Route path="person" element={<Person />} />
         <Route path="useeffect" element={<Useeffect />} />
         <Route path="*" element={<Error_404 />} />
         <Route path="login" element={<Login />} />
+        <Route path="person/card01/:id" element={<Card01 />} />
+
       </Route>
     </Routes>
   );

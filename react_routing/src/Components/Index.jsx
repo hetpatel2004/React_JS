@@ -9,7 +9,6 @@ function Index() {
   const navigate = useNavigate()
   const index = lazy(()=>import("./Home"))
   return (
-
     <>
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
@@ -30,7 +29,7 @@ function Index() {
                 <Link to={"contect"}>Contect</Link>
             </Nav.Link>
              <Nav.Link>
-                <Link to={"person/:id"}>Person</Link>
+                <Link to={"person"}>Person</Link>
             </Nav.Link>
              <Nav.Link>
                 <Link to={"useeffect"}>useeffect</Link>

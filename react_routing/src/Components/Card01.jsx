@@ -1,8 +1,10 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 
 function Card01() {
+  const {id}=useParams()
   return (
-    <div>Card01</div>
+    <h1>wegfui {id}</h1>
   )
 }
 
