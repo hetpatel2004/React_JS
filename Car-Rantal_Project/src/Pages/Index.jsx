@@ -11,11 +11,11 @@ function Index() {
         <Container>
           <Navbar.Brand href="#home">Navbar</Navbar.Brand>
           <Nav className="me-auto">
-            {/* <Nav.Link>
-              <Link to={"/"}>Index</Link>
-            </Nav.Link> */}
             <Nav.Link>
-              <Link to={"/home"}>home</Link>
+              <Link to={"/"}>Index</Link>
+            </Nav.Link>
+            <Nav.Link>
+              <Link to={"/home"}>Home</Link>
             </Nav.Link>
             <Nav.Link>
               <Link to={"/about"}>About</Link>
