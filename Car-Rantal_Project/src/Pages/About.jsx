@@ -1,9 +1,8 @@
-import React from 'react'
-import Index from './Index'
+import Nav_bar from "./Nav_bar"
 
 function About() {
    return (<>
-    <Index/>
+      <Nav_bar/>
     <h1>About</h1>
   </>)
 }

@@ -1,10 +1,7 @@
-import React from 'react'
-import Main_route from './Main_route'
-import Index from './Index'
-
+import Nav_bar from "./Nav_bar"
 function Home() {
   return (<>
-    <Index/>
+    <Nav_bar/>
     <h1>Home</h1>
   </>)
 }
