@@ -16,6 +16,7 @@ import { useState } from 'react'
 import Task5 from './List_Keys/Task5.jsx'
 import Crud from './List_Keys/New.jsx'
 import Cont_one from './usecontext/Cont_one.jsx'
+import Mainimperativehandel from './components/UseImerativehandel/Mainimperativehandel.jsx'
 // import Text_one from './components/userref/Test_one.jsx'
 
 function App() {
@@ -71,7 +72,8 @@ function App() {
       {/* <Task5/> */}
       {/* <Crud/> */}
       {/* <Text_one/> */}
-      <Cont_one/>
+      {/* <Cont_one/> */}
+      <Mainimperativehandel/>
       </>
   )
 }

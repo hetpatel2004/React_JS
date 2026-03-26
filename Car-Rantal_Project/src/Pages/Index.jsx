@@ -8,6 +8,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import self_driven from "../assets/selfdriven.png"
 import Car_withDriver from"../assets/car_withdriver.png"
+import Take_cars from"../assets/Take_cars.png"
 function Index() {
   return (
     <>
@@ -19,17 +20,21 @@ function Index() {
     <div className='sec1_pro'>
     <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src={self_driven}/>
+      <span>Rental Self-Driven cars</span>
     </Card>
 
     <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src={Car_withDriver}/>
+      <span>Rental cars with Driver</span>
     </Card>
     <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={self_driven}/>
+      <Card.Img variant="top" src={Take_cars}/>
+      <span>Provide your Car on Rent</span>
     </Card>
     </div>
+        </Container>
 
-     {/* <Carousel data-bs-theme="dark" className='slider'>
+     <Carousel data-bs-theme="dark" className='slider'>
       <Carousel.Item>
       <img
       className="d-block w-100"
@@ -54,8 +59,7 @@ function Index() {
         />
         
         </Carousel.Item>
-        </Carousel> */}
-        </Container>
+        </Carousel>
     </>
     
   )
