@@ -7,7 +7,7 @@ function Parent_one() {
   return (
     <>
     <Child_one ref={referance}/>
-    <button onClick={()=>()}></button>
+    {/* <button onClick={()=>()}></button> */}
     </>
 )
 }

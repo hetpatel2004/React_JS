@@ -17,6 +17,8 @@ import Task5 from './List_Keys/Task5.jsx'
 import Crud from './List_Keys/New.jsx'
 import Cont_one from './usecontext/Cont_one.jsx'
 import Mainimperativehandel from './components/UseImerativehandel/Mainimperativehandel.jsx'
+import Parent from './components/UseImerativehandel/parent.jsx'
+import P_Patent from './State_Leafting/Patent.jsx'
 // import Text_one from './components/userref/Test_one.jsx'
 
 function App() {
@@ -73,7 +75,8 @@ function App() {
       {/* <Crud/> */}
       {/* <Text_one/> */}
       {/* <Cont_one/> */}
-      <Mainimperativehandel/>
+      {/* <Mainimperativehandel/> */}
+      <P_Patent/>
       </>
   )
 }
