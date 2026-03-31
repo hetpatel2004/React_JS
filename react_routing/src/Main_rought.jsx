@@ -47,7 +47,7 @@ function Main_rought() {
     //   </Route>
     // </Routes>
     <Routes>
-      <Route path="/task" element={< Task/>} />
+      <Route path="/task" element={<Task/>}/>
       <Route path="/lifting" element={<P_Patent/>}/>
     </Routes>
   );
