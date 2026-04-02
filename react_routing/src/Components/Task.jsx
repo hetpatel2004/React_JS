@@ -61,7 +61,7 @@ function reducer(state, action) {
           t.id === action.payload ? { ...t, completed: !t.completed } : t
         ),
       };
-
+ 
     case "SHOW_ALL":
       return { ...state, filter: "ALL" };
 

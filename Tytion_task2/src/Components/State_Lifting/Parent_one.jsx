@@ -27,9 +27,9 @@ function Parent_one() {
       {/* <C_one n_value={name} n_state={setname} e_value={email} e_state={setemail}/>
       <C_two n_value={name} e_value={email}/> */}
 
-       <h3>Checkbox Sync Example</h3>
+       {/* <h3>Checkbox Sync Example</h3>
       <C_one checked={checked} setChecked={setChecked} />
-      <p>Status: {checked ? "Checked" : "Unchecked"}</p>
+      <p>Status: {checked ? "Checked" : "Unchecked"}</p> */}
     </>
     
   )

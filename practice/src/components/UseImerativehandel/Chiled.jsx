@@ -1,18 +1,18 @@
-import React, { forwardRef, useImperativeHandle } from 'react'
+// import React, { forwardRef, useImperativeHandle } from 'react'
 
-function Chiled(props,ref) {
-    useImperativeHandle(ref,()=>{
-        return{
-            content
-        }
-    })
-    const content = ()=>{
-        console.log("hello i am doing react");
+// function Chiled(props,ref) {
+//     useImperativeHandle(ref,()=>{
+//         return{
+//             content
+//         }
+//     })
+//     const content = ()=>{
+//         console.log("hello i am doing react");
         
-    }
-  return (
-    <div>Chiled</div>
-  )
-}
+//     }
+//   return (
+//     <div>Chiled</div>
+//   )
+// }
 
-export default forwardRef(Chiled);
+// export default forwardRef(Chiled);
