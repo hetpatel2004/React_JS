@@ -18,6 +18,7 @@ function Usememo_task() {
     return arr.reduce((total, final_value)=>(total + final_value ,0))
   },[arr])
 
+  
   return (
     <>
     {/* <h1>Number:-{number}</h1>

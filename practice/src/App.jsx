@@ -20,6 +20,7 @@ import Cont_one from './usecontext/Cont_one.jsx'
 
 import Usemem from './Usememo/Usemem.jsx'
 import Form_validation from './Form_validation/Form_validation.jsx'
+import Counter from './Custiom_hook/Counter.jsx'
 // import Text_one from './components/userref/Test_one.jsx'
 
 function App() {
@@ -78,7 +79,8 @@ function App() {
       {/* <Cont_one/> */}
       
     {/* <Usemem/> */}
-    <Form_validation/>
+    {/* <Form_validation/> */}
+    <Counter/>
       </>
   )
 }
