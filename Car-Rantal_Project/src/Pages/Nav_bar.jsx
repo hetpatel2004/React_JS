@@ -5,6 +5,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
+
 import { Button, Image } from "react-bootstrap";
 import Logo from "../assets/logo.png";
 function Nav_bar() {
@@ -12,7 +13,7 @@ function Nav_bar() {
     <>
       <Navbar  data-bs-theme="dark" className="align-items-center abc">
         <Container>
-          <Navbar.Brand><Image src={Logo} className="logo"/> Car_Rental</Navbar.Brand>
+          <Navbar.Brand><Image src={Logo} className="logo"/> Car Rental</Navbar.Brand>
           <Nav className="align-items-center">
             <Nav className="ms-3">
               <Link to={"/"}>Index</Link>
