@@ -3,6 +3,8 @@ import Nav_bar from './Nav_bar'
 import Carousel from 'react-bootstrap/Carousel';
 import { Container, Image, Row, Col, Card } from 'react-bootstrap';
 
+// import { Carousel } from "react-bootstrap";
+
 import Coverphoto from "../assets/Coverphoto.png"
 import self_driven from "../assets/selfdriven.png"
 import Car_withDriver from "../assets/car_withdriver.png"
@@ -56,7 +58,7 @@ function Index() {
         </Row>
       </Container>
 
-      {/* Carousel */}
+      {/* Carousel
       <Carousel data-bs-theme="dark" className='slider mt-5'>
         <Carousel.Item>
           <img className="d-block w-100" alt="First slide" />
@@ -69,7 +71,50 @@ function Index() {
         <Carousel.Item>
           <img className="d-block w-100" alt="Third slide" />
         </Carousel.Item>
+      </Carousel> */}
+
+      <div style={{ backgroundColor: "#111", padding: "20px" }}>
+      <Carousel interval={2000} pause={false}>
+        
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src=""
+            alt="Hyundai Creta"
+            style={{ height: "400px", objectFit: "cover" }}
+          />
+          <Carousel.Caption>
+            <h3>Hyundai Creta</h3>
+          </Carousel.Caption>
+        </Carousel.Item>
+
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src=""
+            alt="Tata Harrier"
+            style={{ height: "400px", objectFit: "cover" }}
+          />
+          <Carousel.Caption>
+            <h3>Tata Harrier</h3>
+          </Carousel.Caption>
+        </Carousel.Item>
+
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src=""
+            alt="Mahindra XUV700"
+            style={{ height: "400px", objectFit: "cover" }}
+          />
+          <Carousel.Caption>
+            <h3>Mahindra XUV700</h3>
+          </Carousel.Caption>
+        </Carousel.Item>
+
       </Carousel>
+    </div>
+
     </>
   )
 }
