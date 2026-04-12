@@ -21,6 +21,7 @@ import Cont_one from './usecontext/Cont_one.jsx'
 import Usemem from './Usememo/Usemem.jsx'
 import Form_validation from './Form_validation/Form_validation.jsx'
 import Counter from './Custiom_hook/Counter.jsx'
+import Main_hoc from './HOC/Main_hoc.jsx'
 // import Text_one from './components/userref/Test_one.jsx'
 
 function App() {
@@ -80,7 +81,8 @@ function App() {
       
     {/* <Usemem/> */}
     {/* <Form_validation/> */}
-    <Counter/>
+    {/* <Counter/> */}
+    < Main_hoc/>
       </>
   )
 }
