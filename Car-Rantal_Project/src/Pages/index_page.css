@@ -1,3 +1,10 @@
+body{
+    /* background-color: rgb(70, 69, 69) !important; */
+    /* background-color: #FDE8DB!important; */
+    /* background-color: #8C584B!important; */
+    /* background-color: #FDE8DB!important; */
+    background-color: #221816!important;
+}
 .cover_img {
     height: 650px !important;
     width: 100%;
@@ -38,4 +45,32 @@
 .slider img {
     height: 600px;
     object-fit: cover;
+}
+.sec-4_text{
+    background-color:#C18F7B;
+}
+h2{
+    color: #C18F7B !important;
+}
+.last_sec{
+    height: 650px !important;
+    width: 100%;
+    object-fit: cover !important;
+}
+.sec_5heading{
+    bottom: 170px;
+    right: 20px;
+    font-size: 60px;
+    color: white !important;
+}
+.sec_5text{
+    bottom: 50px;
+    right: -16px;
+    font-size: 35px;
+    width: 45%;
+}
+.sec_5button{
+    bottom: 10px;
+    right: 10px;
+    background-color: #C18F7B;
 }
