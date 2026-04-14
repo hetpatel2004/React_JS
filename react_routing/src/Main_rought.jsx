@@ -13,43 +13,48 @@ import Card01 from "./Components/Card01";
 // import Task from "./Components/Task";
 import P_Patent from "./Components/State_Leafting/Patent";
 import Task from "./Components/Task";
+import Registration from "./Components/Ragistration";
+import Show from "./Components/Show";
+
 
 function Main_rought() {
   const Index = lazy(() => import("./Components/Index"));
   const Contect = lazy(() => import("./Components/Contect"));
   return (
-    // <Routes>
-    //   <Route
-    //     path="/"
-    //     element={
-    //       <Suspense fallback={<p>it's Loading...</p>}>
-    //         <Index />
-    //       </Suspense>
-    //     }
-    //   >
-    //     <Route path="home" element={<Home />} />
-    //     <Route path="about" element={<About />} />
-    //     <Route
-    //       path="contect"
-    //       element={
-    //         <Suspense fallback={<p>it's Loading...</p>}>
-    //           <Contect />
-    //         </Suspense>
-    //       }
-    //     />
-    //     <Route path="person" element={<Person />} />
-    //     <Route path="useeffect" element={<Useeffect />} />
-    //     <Route path="*" element={<Error_404 />} />
-    //     <Route path="login" element={<Login />} />
-    //     <Route path="person/card01/:id" element={<Card01 />} />
-    //     <Route path="lifting" element={<P_Patent />} />
-    
-    //   </Route>
-    // </Routes>
     <Routes>
-      <Route path="/task" element={<Task/>}/>
-      <Route path="/lifting" element={<P_Patent/>}/>
+      <Route
+        path="/"
+        element={
+          <Suspense fallback={<p>it's Loading...</p>}>
+            <Index />
+          </Suspense>
+        }
+      >
+        <Route path="home" element={<Home />} />
+        <Route path="about" element={<About />} />
+        <Route
+          path="contect"
+          element={
+            <Suspense fallback={<p>it's Loading...</p>}>
+              <Contect />
+            </Suspense>
+          }
+        />
+        <Route path="person" element={<Person />} />
+        <Route path="useeffect" element={<Useeffect />} />
+        <Route path="*" element={<Error_404 />} />
+        <Route path="login" element={<Login />} />
+        <Route path="registration" element={< Registration/>} />
+        <Route path="person/card01/:id" element={<Card01 />} />
+        <Route path="lifting" element={<P_Patent />} />
+        <Route path="show" element={<Show />} />
+    
+      </Route>
     </Routes>
+    // <Routes>
+    //   <Route path="/task" element={<Task/>}/>
+    //   <Route path="/lifting" element={<P_Patent/>}/>
+    // </Routes>
   );
 }
 

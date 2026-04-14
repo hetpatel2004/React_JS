@@ -16,27 +16,30 @@ function Index() {
             <Image  src={Car}></Image>
           </Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link>
+            <Nav>
                 <Link to={"/"}>index page</Link>
-            </Nav.Link>
-            <Nav.Link>
+            </Nav>
+            <Nav>
                 <Link to={"home"}>Home</Link>
-            </Nav.Link>
-            <Nav.Link>
+            </Nav>
+            <Nav>
                 <Link to={"about"}>About</Link>
-            </Nav.Link>
-            <Nav.Link>
+            </Nav>
+            <Nav>
                 <Link to={"contect"}>Contect</Link>
-            </Nav.Link>
-             <Nav.Link>
+            </Nav>
+             <Nav>
                 <Link to={"person"}>Person</Link>
-            </Nav.Link>
-             <Nav.Link>
+            </Nav>
+             <Nav>
                 <Link to={"useeffect"}>useeffect</Link>
-            </Nav.Link>
+            </Nav>
           </Nav>
           <Col xs="auto">
             <Button type="submit" onClick={()=>navigate("login")}>Login</Button>
+          </Col>
+           <Col xs="auto">
+            <Button type="submit" onClick={()=>navigate("registration")}>Registration</Button>
           </Col>
         </Container>
       </Navbar>

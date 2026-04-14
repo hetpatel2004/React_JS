@@ -1,0 +1,17 @@
+{
+  "user": [
+    {
+      "id": "1",
+      "name": "Het",
+      "email": "het@gmail.com",
+      "password": "Het@123"
+    },
+    {
+      "id": "AIyKqs5OdbI",
+      "name": "Het Patel",
+      "email": "het.patel.010420047@gmail.com",
+      "password": "wegf"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
