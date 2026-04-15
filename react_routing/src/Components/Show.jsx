@@ -1,15 +1,16 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function Show() {
   const [records, setrecords] = useState([]);
-  useEffect(() =>(
-      axios.get("http://localhost:3000/user").then((res) => {
-        setrecords(res.data);
-      })),
-    [],
-  );
+  useEffect(()=>{
+     axios
+        .get("http://localhost:3000/user")
+        .then((res) => setrecords(res.data))
+        .catch((err) => console.log(err))
+  },[])
   return (
     <>
       {records.map((abc) => (
@@ -18,8 +19,14 @@ function Show() {
           <p>Name:- {abc.name} </p>
           <p>Email:- {abc.email} </p>
           <p>Password:- {abc.password} </p>
-           <hr />
-         </div>
+            <Link to={`/edit/${abc.id}`}>
+            <button>EDIT</button>
+            </Link>
+            <Link to={`/delete/${abc.id}`}>
+                <button>Delete</button>
+            </Link>
+          <hr />
+        </div>
       ))}
     </>
   );

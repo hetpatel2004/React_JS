@@ -6,7 +6,6 @@ function Registration() {
     // axios.get("http://localhost:3000/user")
     // .then(res => console.log(res.data))
     
-    
 const [name ,setname]= useState("")
 const [email ,setemail]= useState("")
 const [password ,setPassword]= useState("")
@@ -24,20 +23,20 @@ const [password ,setPassword]= useState("")
   };
 
   const handleSubmit = (e) => {
-
-
     axios.post("http://localhost:3000/user"
         ,{
             name ,email,password
         }
     )
-    
     .then(res => console.log(res.data))
 
 
     e.preventDefault();
     console.log("Form Data:", formData);
     alert("Registration Successful!");
+    setname("")
+    setemail("")
+    setPassword("")
   };
 
   return (
@@ -50,7 +49,7 @@ const [password ,setPassword]= useState("")
             type="text"
             name="name"
             placeholder="Enter Name"
-            value={formData.name}
+            value={name}
             onChange={(e)=>setname(e.target.value)}
           />
         </div>
@@ -62,7 +61,7 @@ const [password ,setPassword]= useState("")
             type="email"
             name="email"
             placeholder="Enter Email"
-            value={formData.email}
+            value={email}
             onChange={(e)=>setemail(e.target.value)}
           />
         </div>
@@ -74,7 +73,7 @@ const [password ,setPassword]= useState("")
             type="password"
             name="password"
             placeholder="Enter Password"
-            value={formData.password}
+            value={password}
             onChange={(e)=>setPassword(e.target.value)}
           />
         </div>

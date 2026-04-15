@@ -15,6 +15,8 @@ import P_Patent from "./Components/State_Leafting/Patent";
 import Task from "./Components/Task";
 import Registration from "./Components/Ragistration";
 import Show from "./Components/Show";
+import Edit_api from "./Components/Edit_api";
+import Delete from "./Delete";
 
 
 function Main_rought() {
@@ -48,6 +50,9 @@ function Main_rought() {
         <Route path="person/card01/:id" element={<Card01 />} />
         <Route path="lifting" element={<P_Patent />} />
         <Route path="show" element={<Show />} />
+        {/* <Route path="/edit" element={<Edit_api/>} /> */}
+        <Route path="/edit/:id" element={<Edit_api/>} />
+        <Route path="/delete/:id" element={<Delete/>} />
     
       </Route>
     </Routes>
