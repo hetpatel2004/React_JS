@@ -21,7 +21,7 @@ import Tharrocks from "../assets/Tharrocks.png";
 import Hundaicreta from "../assets/Hundaicreta.png";
 import Tataharrier from "../assets/Tataharrier.png";
 import Last_sec from "../assets/Last_sec.png";
-import sunroof from"../assets/sunroof.png"
+import sunroof from "../assets/sunroof.png";
 
 function Index() {
   return (
@@ -173,17 +173,84 @@ function Index() {
         </Row>
       </Container>
       {/* --------------------------------------------------------------------------- */}
+      <Container fluid>
         <div className="position-relative">
-        <Image src={sunroof} className=" position-relative last_sec p-3"/>
-        <h2 className="position-absolute sec_5heading">Want to rent longer?</h2>
-        <p className="position-absolute sec_5text">Get a One Rent + subscription and enjoy the luxury of a premium SUV every day.</p>
-        <button className="position-absolute sec_5button">Find your subscription</button>
+          <Image src={sunroof} className=" position-relative last_sec " />
+          <h2 className="position-absolute sec_5heading">
+            Want to rent longer?
+          </h2>
+          <p className="position-absolute sec_5text">
+            Get a One Rent + subscription and enjoy the luxury of a premium SUV
+            every day.
+          </p>
+          <button className="position-absolute sec_5button">
+            Find your subscription
+          </button>
         </div>
+      </Container>
 
       {/* --------------------------------------------------------------------------- */}
-      <Image src={Last_sec} className="last_sec p-3"/>
-      {/* --------------------------------------------------------------------------- */}
+<Container className="mt-5">
+  <Row className="h-500">
 
+    {/* Column 1 */}
+    <Col md={4} className="d-flex flex-column gap-3">
+      <div className="box yellow big">
+        <h5>01</h5>
+        <h4>No Deposit</h4>
+        <p>
+          Rent your favorite car without paying any upfront deposit. 
+          Enjoy a smooth and hassle-free booking experience.
+        </p>
+      </div>
+
+      <div className="box dark small">
+        <h5>02</h5>
+        <h4>24/7 Delivery</h4>
+        <p>
+          We deliver your car anytime, anywhere. 
+          Your convenience is our priority.
+        </p>
+      </div>
+    </Col>
+
+    {/* Column 2 (Image full) */}
+    <Col md={4}>
+      <div className="h-100">
+        <img
+          src={sunroof}
+          alt="car"
+          className="img-fluid h-100 w-100 object-fit-cover rounded"
+        />
+      </div>
+    </Col>
+
+    {/* Column 3 */}
+    <Col md={4} className="d-flex flex-column gap-3">
+      <div className="box dark small">
+        <h5>03</h5>
+        <h4>Brand New</h4>
+        <p>
+          Drive the latest models with advanced features, 
+          comfort, and top performance.
+        </p>
+      </div>
+
+      <div className="box yellow big">
+        <h5>04</h5>
+        <h4>Clear Pricing</h4>
+        <p>
+          No hidden charges. Transparent pricing with 
+          insurance included for peace of mind.
+        </p>
+      </div>
+    </Col>
+
+  </Row>
+</Container>
+      {/* --------------------------------------------------------------------------- */}
+      <Image src={Last_sec} className="last_sec p-3" />
+      {/* --------------------------------------------------------------------------- */}
     </>
   );
 }
