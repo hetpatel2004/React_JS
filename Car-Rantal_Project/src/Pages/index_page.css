@@ -2,7 +2,8 @@ body{
     /* background-color: rgb(70, 69, 69) !important; */
     /* background-color: #FDE8DB!important; */
     /* background-color: #8C584B!important; */
-    background-color: #221816!important;
+    /* background-color: #221816!important; */
+    background-color: black;
 }
 .cover_img {
     height: 650px !important;
