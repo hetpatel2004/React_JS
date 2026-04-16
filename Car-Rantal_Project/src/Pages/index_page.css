@@ -1,9 +1,8 @@
 body{
-    background-color: rgb(70, 69, 69) !important;
+    /* background-color: rgb(70, 69, 69) !important; */
     /* background-color: #FDE8DB!important; */
     /* background-color: #8C584B!important; */
-    /* background-color: #FDE8DB!important; */
-    /* background-color: #221816!important; */
+    background-color: #221816!important;
 }
 .cover_img {
     height: 650px !important;
@@ -56,6 +55,7 @@ h2{
     height: 650px !important;
     width: 100% !important;
     object-fit: cover !important;
+    /* border-radius: 20%; */
 }
 .sec_5heading{
     bottom: 170px;
@@ -118,4 +118,42 @@ h2{
   margin-top: 10px;
   font-size: 14px;
   line-height: 1.5;
+}
+.imgborder{
+    border-radius: 50px !important;
+}
+.boxborder{
+    border-radius: 25px !important;
+}
+.last_secbox {
+    background-color: white;
+    /* height: 250px; */
+    width: 270px;
+    border-radius: 10px;
+    padding: 0 30px;
+}
+.last_secbox h4{
+    color:yellow;
+    padding: 10px 0;
+}
+.last_secbox img{
+    /* height: 50px; */
+    width:  200px;
+    padding: 20px 0;
+}
+.rev1{
+   bottom: 40px;
+   left: 1200px;
+}
+.rev2{
+   bottom: 40px;
+   left: 886px;
+}
+.rev3{
+   bottom: 330px;
+   left: 44px;
+}
+.rev4{
+   bottom: 330px;
+   left: 353px;
 }
