@@ -21,6 +21,24 @@
       "password": "672836789528",
       "email": "het.patel.010420047@gmail.com",
       "id": "o62gqq2VWvg"
+    },
+    {
+      "name": "helllo",
+      "password": "4564654654654563",
+      "email": "hello@gmail.com",
+      "id": "cCgxZTQsatI"
+    },
+    {
+      "name": "patel",
+      "password": "123456",
+      "email": "patel@gmail.com",
+      "id": "hFFKxnXnnXs"
+    },
+    {
+      "name": "abc",
+      "password": "123456",
+      "email": "abc@gmail.com",
+      "id": "xBDAlg6tHSU"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

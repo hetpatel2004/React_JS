@@ -34,6 +34,9 @@ function Ragister() {
 
         console.log(name, email, password);
         return { success: "Registered Successfully" }; 
+
+         
+
     }
 
     const [state, formAction, pending] = useActionState(submit, {});
@@ -60,7 +63,7 @@ function Ragister() {
                 <p style={{ color: "green" }}>
                     {state?.success}
                 </p>
-
+                    
                 <input type="submit" value={pending ? "Submitting..." : "Submit"} />
             </form>
         </>
