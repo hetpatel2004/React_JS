@@ -2,7 +2,7 @@ import React from "react";
 import Nav_bar from "./Nav_bar";
 import Carousel from "react-bootstrap/Carousel";
 import { Container, Image, Row, Col, Card, Button } from "react-bootstrap";
-
+import "../Pages/index_page.css"
 // import { Carousel } from "react-bootstrap";
 import Coverphoto from "../assets/Coverphoto.png";
 import self_driven from "../assets/selfdriven.png";
@@ -369,6 +369,37 @@ function Index() {
           <Col md={6} className="text-md-end">
             <p>Follow us: Instagram | Facebook | YouTube</p>
           </Col>
+        </Row>
+      </Container>
+    </div>
+
+    {/* ------------------------------------------------------------------------------------- */}
+
+     <div className="banner-wrapper">
+
+      {/* BACKGROUND IMAGE */}
+      <Image src={bannerImg} className="banner-img" />
+
+      {/* OVERLAY */}
+      <div className="banner-overlay"></div>
+
+      {/* CONTENT */}
+      <Container className="h-100 position-relative">
+        <Row className="h-100 align-items-center">
+
+          {/* LEFT TEXT */}
+          <Col md={8} className="text-white">
+            <h4 className="fw-bold">Want to rent longer?</h4>
+            <p className="mb-0">Get a One Rent+ subscription.</p>
+          </Col>
+
+          {/* RIGHT BUTTON */}
+          <Col md={4} className="text-end">
+            <Button className="banner-btn">
+              Find your subscription
+            </Button>
+          </Col>
+
         </Row>
       </Container>
     </div>

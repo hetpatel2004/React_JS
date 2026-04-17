@@ -28,6 +28,15 @@ import Xuv700 from "../assets/XUV700.png";
 import maruti from "../assets/Suzuki.png";
 import tata from "../assets/Tata.png";
 import mahindra from "../assets/Mahindra.png";
+import Last_sec from "../assets/Last_sec.png";
+import sunroof from "../assets/sunroof.png";
+import rev1 from "../assets/rev1.png";
+import rev2 from "../assets/rev2.png";
+import rev3 from "../assets/rev3.png";
+import rev4 from "../assets/rev4.png";
+import "../Pages/Index_two.jsx";
+import rooftoop_ofcar from "../assets/rooftop.png";
+import Column_one from "../assets/column_one.png";
 
 function Index() {
   return (
@@ -37,7 +46,7 @@ function Index() {
       {/* Cover Image */}
       {/* <Ima.ge src={Coverphoto} fluid className="cover_img" /> */}
       {/* --------------------------------------------------------------------------------------- */}
-              <Nav_bar />
+      <Nav_bar />
 
       {/* HERO */}
       <div
@@ -50,9 +59,14 @@ function Index() {
       >
         <div className="hero-overlay"></div>
 
-        <Container className="position-relative text-white" style={{ top: "65%" }}>
+        <Container
+          className="position-relative text-white"
+          style={{ top: "65%" }}
+        >
           <h1 className="fw-bold display-4">
-            Rent smart.<br />Drive better.
+            Rent smart.
+            <br />
+            Drive better.
           </h1>
 
           <Row className="mt-4 bg-dark p-3 rounded shadow">
@@ -82,7 +96,7 @@ function Index() {
         <h4 className="mb-4">Popular Categories</h4>
 
         <Row className="g-3">
-          {[luxury, Spots, Suv, Muv,  sedan, Hackback].map((img, i) => (
+          {[luxury, Spots, Suv, Muv, sedan, Hackback].map((img, i) => (
             <Col md={2} key={i}>
               <Card className="bg-dark border-0 hover-box p-1">
                 <Image src={img} className="sec_one" />
@@ -106,117 +120,386 @@ function Index() {
           ))}
         </Row>
       </Container>
+      {/* ---------------------------------------------------------------------------------------------------------- */}
 
       {/* OFFERS */}
-     <Container className="py-5" style={{ backgroundColor: "#fff" }}>
-      {/* Header */}
-      <Row className="mb-4 align-items-center">
-        <Col>
-          <h2 className="fw-bold" style={{ letterSpacing: "-1px" }}>Experience Luxury</h2>
-        </Col>
-        <Col className="text-end">
-          <Button variant="outline-secondary" size="sm" className="px-3 py-1 border-1" style={{ borderRadius: "8px", fontSize: "12px" }}>
-            See All
-          </Button>
-        </Col>
-      </Row>
+      <div style={{ backgroundColor: "#fff", color: "#000" }}>
+        <Container className="py-5">
+          {/* Header */}
+          <Row className="mb-4 align-items-center">
+            <Col>
+              <h2 className="fw-bold" style={{ letterSpacing: "-1px" }}>
+                Experience Luxury
+              </h2>
+            </Col>
+            <Col className="text-end">
+              <Button
+                variant="outline-secondary"
+                size="sm"
+                className="px-3 py-1 border-1"
+                style={{ borderRadius: "8px", fontSize: "12px" }}
+              >
+                See All
+              </Button>
+            </Col>
+          </Row>
 
-      {/* Cards */}
-      <Row className="g-4">
-        
-        {/* CARD 1 - Rolls-Royce Ghost */}
+          {/* Cards */}
+          <Row className="g-4" style={{ width: "100%" }}>
+            {/* CARD 1 */}
+            <Col md={4}>
+              <div className="custom-card align-items-center">
+                {/* IMAGE */}
+                <div className="custom-card-img">
+                  <img src={Tataharrier} alt="car" />
+                </div>
+
+                {/* CONTENT */}
+                <div className="custom-card-body ">
+                  <div className="d-flex justify-content-between align-items-start mb-2">
+                    <div>
+                      <h6 className="fw-bold mb-1">Rolls-Royce Ghost</h6>
+                      <small className="text-muted">2024, Automatic</small>
+                    </div>
+                    <img src={Xuv700} alt="brand" className="brand-logo" />
+                  </div>
+
+                  <div className="d-flex justify-content-between align-items-center mt-3">
+                    <h6 className="fw-bold mb-0">
+                      $899.00 <small className="text-muted">/ day</small>
+                    </h6>
+                    <Button className="btn btn-warning btn-sm fw-bold">
+                      Details
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </Col>
+
+            {/* CARD 2 */}
+            <Col md={4}>
+              <div className="custom-card align-items-center">
+                {/* IMAGE */}
+                <div className="custom-card-img">
+                  <img src={Tataharrier} alt="car" />
+                </div>
+
+                {/* CONTENT */}
+                <div className="custom-card-body ">
+                  <div className="d-flex justify-content-between align-items-start mb-2">
+                    <div>
+                      <h6 className="fw-bold mb-1">Rolls-Royce Ghost</h6>
+                      <small className="text-muted">2024, Automatic</small>
+                    </div>
+                    <img src={Xuv700} alt="brand" className="brand-logo" />
+                  </div>
+
+                  <div className="d-flex justify-content-between align-items-center mt-3">
+                    <h6 className="fw-bold mb-0">
+                      $899.00 <small className="text-muted">/ day</small>
+                    </h6>
+                    <Button className="btn btn-warning btn-sm fw-bold">
+                      Details
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </Col>
+            {/* Card-3 */}
+            <Col md={4}>
+              <div className="custom-card align-items-center">
+                {/* IMAGE */}
+                <div className="custom-card-img">
+                  <img src={Tataharrier} alt="car" />
+                </div>
+
+                {/* CONTENT */}
+                <div className="custom-card-body ">
+                  <div className="d-flex justify-content-between align-items-start mb-2">
+                    <div>
+                      <h6 className="fw-bold mb-1">Rolls-Royce Ghost</h6>
+                      <small className="text-muted">2024, Automatic</small>
+                    </div>
+                    <img src={Xuv700} alt="brand" className="brand-logo" />
+                  </div>
+
+                  <div className="d-flex justify-content-between align-items-center mt-3">
+                    <h6 className="fw-bold mb-0">
+                      $899.00 <small className="text-muted">/ day</small>
+                    </h6>
+                    <Button className="btn btn-warning btn-sm fw-bold">
+                      Details
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+
+      {/* -------------------------------------------------------------------------------- */}
+
+      {/* <Container> */}
+      <Image src={Last_sec} className="last_sec  imgborder" />
+      <div className="position-absolute">
+        <div className="last_secbox position-absolute rev1">
+          <h4>&#9733;&#9733;&#9733;&#9733;&#9733;</h4>
+          <p>
+            Great experience using this car rental website. The booking process
+            was simple and quick, and the car was clean and well-maintained.
+          </p>
+          <img src={rev1} alt="" />
+        </div>
+        <div className="last_secbox position-absolute rev2">
+          <h4>&#9733;&#9733;&#9733;&#9733;&#9733;</h4>
+          <p>
+            Great experience using this car rental website. The booking process
+            was simple and quick, and the car was clean and well-maintained.
+          </p>
+          <img src={rev2} alt="" />
+        </div>
+        <div className="last_secbox position-absolute rev3">
+          <h4>&#9733;&#9733;&#9733;&#9733;&#9733;</h4>
+          <p>
+            Great experience using this car rental website. The booking process
+            was simple and quick, and the car was clean and well-maintained.
+          </p>
+          <img src={rev3} alt="" />
+        </div>
+        <div className="last_secbox position-absolute rev4">
+          <h4>&#9733;&#9733;&#9733;&#9733;&#9733;</h4>
+          <p>
+            Great experience using this car rental website. The booking process
+            was simple and quick, and the car was clean and well-maintained.
+          </p>
+          <img src={rev4} alt="" />
+        </div>
+      </div>
+
+      {/* ---------------------------------------------------------------------------- */}
+      {/* OFFERS */}
+      <div style={{ backgroundColor: "#fff", color: "#000" }}>
+        <Container className="py-5">
+          {/* Header */}
+          <Row className="mb-4 align-items-center">
+            <Col>
+              <h2 className="fw-bold" style={{ letterSpacing: "-1px" }}>
+                Experience Luxury
+              </h2>
+            </Col>
+            <Col className="text-end">
+              <Button
+                variant="outline-secondary"
+                size="sm"
+                className="px-3 py-1 border-1"
+                style={{ borderRadius: "8px", fontSize: "12px" }}
+              >
+                See All
+              </Button>
+            </Col>
+          </Row>
+
+          {/* Cards */}
+          <Row className="g-4" style={{ width: "100%" }}>
+            {/* CARD 1 */}
+            <Col md={4}>
+              <div className="custom-card align-items-center">
+                {/* IMAGE */}
+                <div className="custom-card-img">
+                  <img src={Tataharrier} alt="car" />
+                </div>
+
+                {/* CONTENT */}
+                <div className="custom-card-body ">
+                  <div className="d-flex justify-content-between align-items-start mb-2">
+                    <div>
+                      <h6 className="fw-bold mb-1">Rolls-Royce Ghost</h6>
+                      <small className="text-muted">2024, Automatic</small>
+                    </div>
+                    <img src={Xuv700} alt="brand" className="brand-logo" />
+                  </div>
+
+                  <div className="d-flex justify-content-between align-items-center mt-3">
+                    <h6 className="fw-bold mb-0">
+                      $899.00 <small className="text-muted">/ day</small>
+                    </h6>
+                    <Button className="btn btn-warning btn-sm fw-bold">
+                      Details
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </Col>
+
+            {/* CARD 2 */}
+            <Col md={4}>
+              <div className="custom-card align-items-center">
+                {/* IMAGE */}
+                <div className="custom-card-img">
+                  <img src={Tataharrier} alt="car" />
+                </div>
+
+                {/* CONTENT */}
+                <div className="custom-card-body ">
+                  <div className="d-flex justify-content-between align-items-start mb-2">
+                    <div>
+                      <h6 className="fw-bold mb-1">Rolls-Royce Ghost</h6>
+                      <small className="text-muted">2024, Automatic</small>
+                    </div>
+                    <img src={Xuv700} alt="brand" className="brand-logo" />
+                  </div>
+
+                  <div className="d-flex justify-content-between align-items-center mt-3">
+                    <h6 className="fw-bold mb-0">
+                      $899.00 <small className="text-muted">/ day</small>
+                    </h6>
+                    <Button className="btn btn-warning btn-sm fw-bold">
+                      Details
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </Col>
+            {/* Card-3 */}
+            <Col md={4}>
+              <div className="custom-card align-items-center">
+                {/* IMAGE */}
+                <div className="custom-card-img">
+                  <img src={Tataharrier} alt="car" />
+                </div>
+
+                {/* CONTENT */}
+                <div className="custom-card-body ">
+                  <div className="d-flex justify-content-between align-items-start mb-2">
+                    <div>
+                      <h6 className="fw-bold mb-1">Rolls-Royce Ghost</h6>
+                      <small className="text-muted">2024, Automatic</small>
+                    </div>
+                    <img src={Xuv700} alt="brand" className="brand-logo" />
+                  </div>
+
+                  <div className="d-flex justify-content-between align-items-center mt-3">
+                    <h6 className="fw-bold mb-0">
+                      $899.00 <small className="text-muted">/ day</small>
+                    </h6>
+                    <Button className="btn btn-warning btn-sm fw-bold">
+                      Details
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+
+      {/* ------------------------------------------------------------------------------------------------------------- */}
+
+      <div className="banner-wrapper">
+        {/* IMAGE */}
+        <Image src={rooftoop_ofcar} className="banner-img" />
+
+        {/* BUTTON ONLY */}
+        <Button className="banner-btn">Find your subscription</Button>
+      </div>
+
+      {/* ---------------------------------------------------------------------------------------------------------- */}
+      <Row className="g-3 px-4">
+        {" "}
+        {/* adds left-right space */}
+        {/* COLUMN 1 */}
         <Col md={4}>
-          <Card className="border-0 shadow-sm overflow-hidden" style={{ borderRadius: "15px" }}>
-            <div className="position-relative">
-              <Card.Img
-                src={Tataharrier} // Replace with your high-res image
-                style={{ height: "220px", objectFit: "cover" }}
-              />
+          <div className="col-card">
+            <Image src={Column_one} className="img-full" />
+          </div>
+        </Col>
+        {/* COLUMN 2 */}
+        <Col md={4} className="d-flex flex-column gap-3">
+          <div className="col-card top-img">
+            <Image src={rooftoop_ofcar} className="img-full" />
+          </div>
+
+          <div className="col-card small text-center text-white d-flex flex-column justify-content-center">
+            <h6 className="text-warning">Perfect Solution for Your Comfort</h6>
+            <p className="mb-0">Earn more. Effortless.</p>
+          </div>
+        </Col>
+        {/* COLUMN 3 */}
+        <Col md={4}>
+          <div className="col-card text-white p-4 h-100 d-flex flex-column justify-content-between">
+            <div>
+              <h4 className="text-warning fw-bold ">
+                Are you a car rental company?
+              </h4>
+              <p className="text-muted White_text">
+                Showcase your fleet to high-end clients. Get bookings. Keep full
+                control.
+              </p>
             </div>
 
-            <Card.Body className="p-4">
-              <div className="d-flex justify-content-between align-items-start mb-3">
-                <div>
-                  <h5 className="fw-bold mb-1">Rolls-Royce Ghost</h5>
-                  <p className="text-muted small mb-0">2024, Automatic</p>
-                </div>
-                {/* Brand Logo Placeholder */}
-                <div style={{ width: "40px", opacity: "0.7" }}>
-                   <img src={Xuv700} alt="brand" className="img-fluid" />
-                </div>
-              </div>
-
-              <div className="d-flex justify-content-between align-items-center mt-4">
-                <h5 className="fw-bold mb-0">$899.00 <small className="fw-normal text-muted" style={{ fontSize: "14px" }}>/ day</small></h5>
-                <Button
-                  className="px-4 py-2 fw-bold"
-                  style={{ background: "#f8e71c", border: "none", color: "#000", borderRadius: "8px" }}
-                >
-                  Details
-                </Button>
-              </div>
-            </Card.Body>
-          </Card>
+            <button className="btn btn-outline-light">List Your Cars</button>
+          </div>
         </Col>
-
-        {/* CARD 2 - Rolls-Royce Cullinan */}
-        <Col md={4}>
-          <Card className="border-0 shadow-sm overflow-hidden" style={{ borderRadius: "15px" }}>
-            <Card.Img
-              src={Hundaicreta}
-              style={{ height: "220px", objectFit: "cover" }}
-            />
-            <Card.Body className="p-4">
-              <div className="d-flex justify-content-between align-items-start mb-3">
-                <div>
-                  <h5 className="fw-bold mb-1">Rolls-Royce Cullinan</h5>
-                  <p className="text-muted small mb-0">2024, Automatic</p>
-                </div>
-                <div style={{ width: "40px", opacity: "0.7" }}>
-                   <img src={mahindra} alt="brand" className="img-fluid" />
-                </div>
-              </div>
-
-              <div className="d-flex justify-content-between align-items-center mt-4">
-                <h5 className="fw-bold mb-0">$1,416.00 <small className="fw-normal text-muted" style={{ fontSize: "14px" }}>/ day</small></h5>
-                <Button className="px-4 py-2 fw-bold" style={{ background: "#f8e71c", border: "none", color: "#000", borderRadius: "8px" }}>
-                  Details
-                </Button>
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-
-        {/* CARD 3 - Lamborghini Urus */}
-        <Col md={4}>
-          <Card className="border-0 shadow-sm overflow-hidden" style={{ borderRadius: "15px" }}>
-            <Card.Img
-              src={Tataharrier}
-              style={{ height: "220px", objectFit: "cover" }}
-            />
-            <Card.Body className="p-4">
-              <div className="d-flex justify-content-between align-items-start mb-3">
-                <div>
-                  <h5 className="fw-bold mb-1">Lamborghini Urus</h5>
-                  <p className="text-muted small mb-0">2023, Automatic</p>
-                </div>
-                <div style={{ width: "30px" }}>
-                   <img src={Tataharrier} alt="brand" className="img-fluid" />
-                </div>
-              </div>
-
-              <div className="d-flex justify-content-between align-items-center mt-4">
-                <h5 className="fw-bold mb-0">$273.00 <small className="fw-normal text-muted" style={{ fontSize: "14px" }}>/ day</small></h5>
-                <Button className="px-4 py-2 fw-bold" style={{ background: "#f8e71c", border: "none", color: "#000", borderRadius: "8px" }}>
-                  Details
-                </Button>
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-
       </Row>
-    </Container>
+
+      {/* -------------------------------------------------------------------------------------------- */}
+      <section className="delivery-section">
+      <Container fluid>
+        <Row>
+          {/* LEFT */}
+          <Col lg={5} className="left-side">
+            <h2 className="title">Car Delivery & Pickup Options</h2>
+            <p className="desc">
+              One Rent provides flexible car delivery and pickup options to
+              suit your schedule.
+            </p>
+
+            {/* Card 1 */}
+            <div className="info-card">
+              <div className="icon-box">📍</div>
+              <div>
+                <h5>Office Pickup</h5>
+                <p>
+                  Visit our office and pick up your car easily within minutes.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 2 */}
+            <div className="info-card">
+              <div className="icon-box">🚚</div>
+              <div>
+                <h5>Delivery</h5>
+                <ul>
+                  <li>Free delivery within city</li>
+                  <li>Fast doorstep service</li>
+                  <li>Available 24/7</li>
+                </ul>
+              </div>
+            </div>
+          </Col>
+
+          {/* RIGHT */}
+          <Col lg={7} className="right-side">
+            <Image
+              
+              alt="map"
+              className="map-img"
+            />
+
+            <div className="map-card">
+              <h6>Our Office</h6>
+              <p>
+                Business Bay, Dubai <br />
+                +971 000 0000 <br />
+                info@onerent.ae
+              </p>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+    </section>
     </>
   );
 }
