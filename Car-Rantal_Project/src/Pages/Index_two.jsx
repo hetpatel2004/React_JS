@@ -37,6 +37,7 @@ import rev4 from "../assets/rev4.png";
 import "../Pages/Index_two.jsx";
 import rooftoop_ofcar from "../assets/rooftop.png";
 import Column_one from "../assets/column_one.png";
+import map from"../assets/map.png";
 
 function Index() {
   return (
@@ -445,61 +446,57 @@ function Index() {
 
       {/* -------------------------------------------------------------------------------------------- */}
       <section className="delivery-section">
-      <Container fluid>
-        <Row>
-          {/* LEFT */}
-          <Col lg={5} className="left-side">
-            <h2 className="title">Car Delivery & Pickup Options</h2>
-            <p className="desc">
-              One Rent provides flexible car delivery and pickup options to
-              suit your schedule.
-            </p>
+  <Container fluid className="p-0">
+    <Row className="g-0 m-3">
+      
+      {/* LEFT */}
+      <Col lg={5} className="left-side d-flex flex-column justify-content-center">
+        <div className="content">
+          <h2 className="title">Car Delivery & Pickup Options</h2>
+          <p className="desc">
+            One Rent provides flexible car delivery and pickup options to
+            suit your schedule.
+          </p>
 
-            {/* Card 1 */}
-            <div className="info-card">
-              <div className="icon-box">📍</div>
-              <div>
-                <h5>Office Pickup</h5>
-                <p>
-                  Visit our office and pick up your car easily within minutes.
-                </p>
-              </div>
+          <div className="info-card">
+            <div className="icon-box">📍</div>
+            <div>
+              <h5>Office Pickup</h5>
+              <p>Visit our office and pick up your car easily within minutes.</p>
             </div>
+          </div>
 
-            {/* Card 2 */}
-            <div className="info-card">
-              <div className="icon-box">🚚</div>
-              <div>
-                <h5>Delivery</h5>
-                <ul>
-                  <li>Free delivery within city</li>
-                  <li>Fast doorstep service</li>
-                  <li>Available 24/7</li>
-                </ul>
-              </div>
+          <div className="info-card">
+            <div className="icon-box">🚚</div>
+            <div>
+              <h5>Delivery</h5>
+              <ul>
+                <li>Free delivery within city</li>
+                <li>Fast doorstep service</li>
+                <li>Available 24/7</li>
+              </ul>
             </div>
-          </Col>
+          </div>
+        </div>
+      </Col>
 
-          {/* RIGHT */}
-          <Col lg={7} className="right-side">
-            <Image
-              
-              alt="map"
-              className="map-img"
-            />
+      {/* RIGHT */}
+      <Col lg={7} className="right-side">
+        <Image src={map} alt="map" className="map-img" />
 
-            <div className="map-card">
-              <h6>Our Office</h6>
-              <p>
-                Business Bay, Dubai <br />
-                +971 000 0000 <br />
-                info@onerent.ae
-              </p>
-            </div>
-          </Col>
-        </Row>
-      </Container>
-    </section>
+        <div className="map-card">
+          <h6>Our Office</h6>
+          <p>
+            Business Bay, Ahmedabad <br />
+            +91 0123456789 <br />
+            abc@onerent.ae
+          </p>
+        </div>
+      </Col>
+
+    </Row>
+  </Container>
+</section>
     </>
   );
 }

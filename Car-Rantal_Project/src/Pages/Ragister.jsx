@@ -31,11 +31,8 @@ function Ragister() {
             console.log(res.data);
         })
         
-
         console.log(name, email, password);
         return { success: "Registered Successfully" }; 
-
-         
 
     }
 
@@ -64,7 +61,7 @@ function Ragister() {
                     {state?.success}
                 </p>
                     
-                <input type="submit" value={pending ? "Submitting..." : "Submit"} />
+                <input type="submit" value={pending ? "Submitting..." : "Submit"}/>
             </form>
         </>
     );
