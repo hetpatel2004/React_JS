@@ -497,6 +497,136 @@ function Index() {
     </Row>
   </Container>
 </section>
+
+{/* ------------------------------------------------------------------------------- */}
+      <Container className="mt-5">
+        <Row className="h-500">
+          {/* Column 1 */}
+          <Col md={4} className="d-flex flex-column gap-3 ">
+            <div className="box yellow big boxborder">
+              <h5>01</h5>
+              <h4>No Deposit</h4>
+              <p>
+                Rent your favorite car without paying any upfront deposit. Enjoy
+                a smooth and hassle-free booking experience.
+              </p>
+            </div>
+
+            <div className="box dark small boxborder">
+              <h5>02</h5>
+              <h4>24/7 Delivery</h4>
+              <p>
+                We deliver your car anytime, anywhere. Your convenience is our
+                priority.
+              </p>
+            </div>
+          </Col>
+
+          {/* Column 2 (Image full) */}
+          <Col md={4}>
+            <div className="h-100">
+              <img
+                src={sunroof}
+                alt="car"
+                className="img-fluid h-100 w-100 object-fit-cover rounded"
+              />
+            </div>
+          </Col>
+
+          {/* Column 3 */}
+          <Col md={4} className="d-flex flex-column gap-3 ">
+            <div className="box dark small boxborder">
+              <h5>03</h5>
+              <h4>Brand New</h4>
+              <p>
+                Drive the latest models with advanced features, comfort, and top
+                performance.
+              </p>
+            </div>
+
+            <div className="box yellow big boxborder">
+              <h5>04</h5>
+              <h4>Clear Pricing</h4>
+              <p>
+                No hidden charges. Transparent pricing with insurance included
+                for peace of mind.
+              </p>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+{/* ------------------------------------------------------------------------------- */}
+    <div>
+<Container className="py-5">
+        <Row className="mb-4 align-items-center">
+          
+          {/* Left Section */}
+          <Col md={6}>
+            <h5 style={{ color: "#ffc107" }}>Convert car in to dollars</h5>
+            <h4>Rent a car or share yours — all in one easy app</h4>
+
+            <div className="mt-3">
+              <Button variant="dark" className="me-2 border">
+                App Store
+              </Button>
+              <Button variant="dark" className="border">
+                Google Play
+              </Button>
+            </div>
+          </Col>
+
+          {/* Right Section */}
+          <Col md={6} className="text-md-end mt-4 mt-md-0">
+            <h5>Google ⭐⭐⭐⭐⭐</h5>
+            <p>Based on 1000+ reviews</p>
+          </Col>
+        </Row>
+
+        <hr style={{ borderColor: "#444" }} />
+
+        {/* Bottom Links */}
+        <Row className="mt-4">
+          <Col md={3}>
+            <h5>CAR RENT</h5>
+            <p>Drive with confidence</p>
+          </Col>
+
+          <Col md={3}>
+            <h6>Legal</h6>
+            <p>Terms & Conditions</p>
+            <p>Privacy Policy</p>
+            <p>Blog</p>
+          </Col>
+
+          <Col md={3}>
+            <h6>Company</h6>
+            <p>About</p>
+            <p>Careers</p>
+            <p>Help & Support</p>
+          </Col>
+
+          <Col md={3}>
+            <h6>Contact</h6>
+            <p>+91 99999 99999</p>
+            <p>info@carrent.com</p>
+            <p>Ahmedabad, India</p>
+          </Col>
+        </Row>
+
+        <hr style={{ borderColor: "#444" }} />
+
+        {/* Bottom Line */}
+        <Row>
+          <Col md={6}>
+            <p>© 2026 CarRent. All rights reserved.</p>
+          </Col>
+          <Col md={6} className="text-md-end">
+            <p>Follow us: Instagram | Facebook | YouTube</p>
+          </Col>
+        </Row>
+      </Container>
+
+    </div>
     </>
   );
 }

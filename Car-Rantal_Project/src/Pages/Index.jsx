@@ -378,7 +378,7 @@ function Index() {
      <div className="banner-wrapper">
 
       {/* BACKGROUND IMAGE */}
-      <Image src={bannerImg} className="banner-img" />
+      <Image  className="banner-img" />
 
       {/* OVERLAY */}
       <div className="banner-overlay"></div>
