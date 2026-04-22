@@ -16,13 +16,16 @@ function Nav_bar() {
           <Navbar.Brand><Image src={Logo} className="logo"/> Car Rental</Navbar.Brand>
           <Nav className="align-items-center">
             <Nav className="ms-3">
-              <Link to={"/"} className="nav-link-custom">Index</Link>
+              <Link to={"/"} className="nav-link-custom">Home</Link>
             </Nav>
             <Nav className="ms-3">
-              <Link to={"/home"} className="nav-link-custom">Home</Link>
+              <Link to={"/available_cars"} className="nav-link-custom">Available Cars</Link>
             </Nav>
             <Nav className="ms-3">
               <Link to={"/about"} className="nav-link-custom">About</Link>
+            </Nav>
+            <Nav className="ms-3">
+              <Link to={"/contect"} className="nav-link-custom">Contect</Link>
             </Nav>
             <Link to={"/login"}>
             <Button className="ms-5 login-btn">Login</Button>

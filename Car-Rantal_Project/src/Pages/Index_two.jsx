@@ -1,5 +1,5 @@
 import React from "react";
-import Nav_bar from "./Nav_bar";
+import Nav_bar from "./Nav_bar.jsx";
 import {
   Container,
   Row,
@@ -16,8 +16,6 @@ import luxury from "../assets/luxury.png";
 import Spots from "../assets/sports.png";
 import Suv from "../assets/SUV.png";
 import Muv from "../assets/MUV.png";
-import Electric from "../assets/electric.png";
-import Compect_SUV from "../assets/Compect_SUV.png";
 import sedan from "../assets/sedan.png";
 import Hackback from "../assets/hatchback.png";
 
@@ -25,21 +23,23 @@ import Hundaicreta from "../assets/Hundaicreta.png";
 import Tataharrier from "../assets/Tataharrier.png";
 import Xuv700 from "../assets/XUV700.png";
 
-import maruti from "../assets/Suzuki.png";
-import tata from "../assets/Tata.png";
-import mahindra from "../assets/Mahindra.png";
+import mahindra_logo from"../assets/Mahindra_logo.png"
+import suzuki_logo from"../assets/Suzuki_logo.png"
+import tata_logo from"../assets/Tata_logo.png"
+import honda_logo from"../assets/Honda_logo.png"
+import hundai_logo from"../assets/Hundai_logo.png"
+import toyata_logo from"../assets/Toyata_logo.png"
 import Last_sec from "../assets/Last_sec.png";
 import sunroof from "../assets/sunroof.png";
 import rev1 from "../assets/rev1.png";
 import rev2 from "../assets/rev2.png";
 import rev3 from "../assets/rev3.png";
 import rev4 from "../assets/rev4.png";
-import "../Pages/Index_two.jsx";
 import rooftoop_ofcar from "../assets/rooftop.png";
 import Column_one from "../assets/column_one.png";
 import map from"../assets/map.png";
 
-function Index() {
+function Index_two() {
   return (
     <>
       {/* <Nav_bar />
@@ -112,7 +112,7 @@ function Index() {
         <h4 className="mb-4">Popular Brands</h4>
 
         <Row className="g-3">
-          {[mahindra, tata, maruti, mahindra, tata, maruti].map((b, i) => (
+          {[mahindra_logo,suzuki_logo,tata_logo,honda_logo,hundai_logo,toyata_logo].map((b, i) => (
             <Col md={2} key={i}>
               <Card className="bg-dark text-center border-0 hover-box p-3">
                 <Image src={b} className="sec_one" />
@@ -163,7 +163,7 @@ function Index() {
                       <h6 className="fw-bold mb-1">Rolls-Royce Ghost</h6>
                       <small className="text-muted">2024, Automatic</small>
                     </div>
-                    <img src={Xuv700} alt="brand" className="brand-logo" />
+                    <img src={mahindra_logo} alt="brand" className="brand-logo" />
                   </div>
 
                   <div className="d-flex justify-content-between align-items-center mt-3">
@@ -195,7 +195,7 @@ function Index() {
                       <h6 className="fw-bold mb-1">Rolls-Royce Ghost</h6>
                       <small className="text-muted">2024, Automatic</small>
                     </div>
-                    <img src={Xuv700} alt="brand" className="brand-logo" />
+                    <img src={tata_logo} alt="brand" className="brand-logo" />
                   </div>
 
                   <div className="d-flex justify-content-between align-items-center mt-3">
@@ -226,7 +226,7 @@ function Index() {
                       <h6 className="fw-bold mb-1">Rolls-Royce Ghost</h6>
                       <small className="text-muted">2024, Automatic</small>
                     </div>
-                    <img src={Xuv700} alt="brand" className="brand-logo" />
+                    <img src={hundai_logo} alt="brand" className="brand-logo" />
                   </div>
 
                   <div className="d-flex justify-content-between align-items-center mt-3">
@@ -325,7 +325,7 @@ function Index() {
                       <h6 className="fw-bold mb-1">Rolls-Royce Ghost</h6>
                       <small className="text-muted">2024, Automatic</small>
                     </div>
-                    <img src={Xuv700} alt="brand" className="brand-logo" />
+                    <img src={tata_logo} alt="brand" className="brand-logo" />
                   </div>
 
                   <div className="d-flex justify-content-between align-items-center mt-3">
@@ -357,7 +357,7 @@ function Index() {
                       <h6 className="fw-bold mb-1">Rolls-Royce Ghost</h6>
                       <small className="text-muted">2024, Automatic</small>
                     </div>
-                    <img src={Xuv700} alt="brand" className="brand-logo" />
+                    <img src={mahindra_logo} alt="brand" className="brand-logo" />
                   </div>
 
                   <div className="d-flex justify-content-between align-items-center mt-3">
@@ -388,7 +388,7 @@ function Index() {
                       <h6 className="fw-bold mb-1">Rolls-Royce Ghost</h6>
                       <small className="text-muted">2024, Automatic</small>
                     </div>
-                    <img src={Xuv700} alt="brand" className="brand-logo" />
+                    <img src={hundai_logo} alt="brand" className="brand-logo" />
                   </div>
 
                   <div className="d-flex justify-content-between align-items-center mt-3">
@@ -637,4 +637,4 @@ function Index() {
     </>
   );
 }
-export default Index;
+export default Index_two;
