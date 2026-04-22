@@ -205,10 +205,87 @@ body {
 }
 
 /* HOVER EFFECT */
-.custom-card:hover {
-  transform: translateY(-6px);
-  transition: 0.3s;
+.custom-card-body {
+  position: relative;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  overflow: hidden; /* ⭐ IMPORTANT */
 }
+
+/* TOP */
+.custom-card-body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: #000;
+  transition: 0.4s;
+  border-radius: 12px 12px 0 0; /* ⭐ */
+}
+
+/* RIGHT */
+.custom-card-body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 0;
+  background: #000;
+  transition: 0.4s 0.4s;
+  border-radius: 0 12px 12px 0; /* ⭐ */
+}
+
+/* BOTTOM */
+.custom-card-body span::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background: #000;
+  transition: 0.4s 0.8s;
+  border-radius: 0 0 12px 12px; /* ⭐ */
+}
+
+/* LEFT */
+.custom-card-body span::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  height: 0;
+  background: #000;
+  transition: 0.4s 1.2s;
+  border-radius: 12px 0 0 12px; /* ⭐ */
+}
+
+/* HOVER */
+.custom-card:hover .custom-card-body::before {
+  width: 100%;
+}
+
+.custom-card:hover .custom-card-body::after {
+  height: 100%;
+}
+
+.custom-card:hover .custom-card-body span::before {
+  width: 100%;
+}
+
+.custom-card:hover .custom-card-body span::after {
+  height: 100%;
+}
+
+
+
+
+
 
 .last_secbox {
     background-color: white;
@@ -301,7 +378,7 @@ body {
 
 /* SMALL HEIGHT (COLUMN 2 TOP/BOTTOM) */
 .small {
-  padding: 50px;
+  padding: 35px;
 }
 .White_text {
   color: white !important;

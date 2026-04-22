@@ -152,11 +152,12 @@ function Index() {
               <div className="custom-card align-items-center">
                 {/* IMAGE */}
                 <div className="custom-card-img">
-                  <img src={Tataharrier} alt="car" />
+                  <img src={Xuv700} alt="car" />
                 </div>
 
                 {/* CONTENT */}
                 <div className="custom-card-body ">
+                  <span>
                   <div className="d-flex justify-content-between align-items-start mb-2">
                     <div>
                       <h6 className="fw-bold mb-1">Rolls-Royce Ghost</h6>
@@ -173,6 +174,7 @@ function Index() {
                       Details
                     </Button>
                   </div>
+                  </span>
                 </div>
               </div>
             </Col>
@@ -187,6 +189,7 @@ function Index() {
 
                 {/* CONTENT */}
                 <div className="custom-card-body ">
+                  <span>
                   <div className="d-flex justify-content-between align-items-start mb-2">
                     <div>
                       <h6 className="fw-bold mb-1">Rolls-Royce Ghost</h6>
@@ -203,6 +206,7 @@ function Index() {
                       Details
                     </Button>
                   </div>
+                  </span>
                 </div>
               </div>
             </Col>
@@ -211,11 +215,12 @@ function Index() {
               <div className="custom-card align-items-center">
                 {/* IMAGE */}
                 <div className="custom-card-img">
-                  <img src={Tataharrier} alt="car" />
+                  <img src={Hundaicreta} alt="car" />
                 </div>
 
                 {/* CONTENT */}
                 <div className="custom-card-body ">
+                  <span >
                   <div className="d-flex justify-content-between align-items-start mb-2">
                     <div>
                       <h6 className="fw-bold mb-1">Rolls-Royce Ghost</h6>
@@ -232,6 +237,7 @@ function Index() {
                       Details
                     </Button>
                   </div>
+                  </span>
                 </div>
               </div>
             </Col>
@@ -313,6 +319,7 @@ function Index() {
 
                 {/* CONTENT */}
                 <div className="custom-card-body ">
+                  <span>
                   <div className="d-flex justify-content-between align-items-start mb-2">
                     <div>
                       <h6 className="fw-bold mb-1">Rolls-Royce Ghost</h6>
@@ -329,6 +336,7 @@ function Index() {
                       Details
                     </Button>
                   </div>
+                  </span>
                 </div>
               </div>
             </Col>
@@ -338,11 +346,12 @@ function Index() {
               <div className="custom-card align-items-center">
                 {/* IMAGE */}
                 <div className="custom-card-img">
-                  <img src={Tataharrier} alt="car" />
+                  <img src={Xuv700} alt="car" />
                 </div>
 
                 {/* CONTENT */}
                 <div className="custom-card-body ">
+                  <span>
                   <div className="d-flex justify-content-between align-items-start mb-2">
                     <div>
                       <h6 className="fw-bold mb-1">Rolls-Royce Ghost</h6>
@@ -359,6 +368,7 @@ function Index() {
                       Details
                     </Button>
                   </div>
+                  </span>
                 </div>
               </div>
             </Col>
@@ -367,11 +377,12 @@ function Index() {
               <div className="custom-card align-items-center">
                 {/* IMAGE */}
                 <div className="custom-card-img">
-                  <img src={Tataharrier} alt="car" />
+                  <img src={Hundaicreta} alt="car" />
                 </div>
 
                 {/* CONTENT */}
                 <div className="custom-card-body ">
+                  <span>
                   <div className="d-flex justify-content-between align-items-start mb-2">
                     <div>
                       <h6 className="fw-bold mb-1">Rolls-Royce Ghost</h6>
@@ -388,6 +399,7 @@ function Index() {
                       Details
                     </Button>
                   </div>
+                  </span>
                 </div>
               </div>
             </Col>
@@ -448,7 +460,6 @@ function Index() {
       <section className="delivery-section">
   <Container fluid className="p-0">
     <Row className="g-0 m-3">
-      
       {/* LEFT */}
       <Col lg={5} className="left-side d-flex flex-column justify-content-center">
         <div className="content">
@@ -457,7 +468,6 @@ function Index() {
             One Rent provides flexible car delivery and pickup options to
             suit your schedule.
           </p>
-
           <div className="info-card">
             <div className="icon-box">📍</div>
             <div>
@@ -465,7 +475,6 @@ function Index() {
               <p>Visit our office and pick up your car easily within minutes.</p>
             </div>
           </div>
-
           <div className="info-card">
             <div className="icon-box">🚚</div>
             <div>
@@ -479,7 +488,6 @@ function Index() {
           </div>
         </div>
       </Col>
-
       {/* RIGHT */}
       <Col lg={7} className="right-side">
         <Image src={map} alt="map" className="map-img" />
@@ -497,13 +505,12 @@ function Index() {
     </Row>
   </Container>
 </section>
-
 {/* ------------------------------------------------------------------------------- */}
       <Container className="mt-5">
         <Row className="h-500">
           {/* Column 1 */}
           <Col md={4} className="d-flex flex-column gap-3 ">
-            <div className="box yellow big boxborder">
+            <div className="box yellow small big boxborder">
               <h5>01</h5>
               <h4>No Deposit</h4>
               <p>
@@ -544,7 +551,7 @@ function Index() {
               </p>
             </div>
 
-            <div className="box yellow big boxborder">
+            <div className="box yellow big small boxborder">
               <h5>04</h5>
               <h4>Clear Pricing</h4>
               <p>
@@ -630,5 +637,4 @@ function Index() {
     </>
   );
 }
-
 export default Index;
