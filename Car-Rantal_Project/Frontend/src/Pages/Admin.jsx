@@ -1,6 +1,36 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Container, Form, Button, Table } from "react-bootstrap";
+import {
+  Form,
+  Button,
+  Table,
+  Row,
+  Col,
+  Card,
+} from "react-bootstrap";
+
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  LineElement,
+  PointElement,
+  Tooltip,
+  Legend,
+} from "chart.js";
+
+import { Bar, Line } from "react-chartjs-2";
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  LineElement,
+  PointElement,
+  Tooltip,
+  Legend
+);
 
 function AdminCars() {
   const [cars, setCars] = useState([]);
@@ -8,7 +38,6 @@ function AdminCars() {
   const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
 
-  // 🔥 Fetch Cars
   const getCars = async () => {
     const res = await axios.get("http://localhost:3000/cars");
     setCars(res.data);
@@ -18,7 +47,6 @@ function AdminCars() {
     getCars();
   }, []);
 
-  // ➕ Add Car
   const addCar = async (e) => {
     e.preventDefault();
 
@@ -30,20 +58,17 @@ function AdminCars() {
       trending: false,
     });
 
-    alert("Car Added");
     setName("");
     setPrice("");
     setImage("");
     getCars();
   };
 
-  // ❌ Delete Car
   const deleteCar = async (id) => {
     await axios.delete(`http://localhost:3000/cars/${id}`);
     getCars();
   };
 
-  // 🔒 Toggle Booked
   const toggleBooked = async (car) => {
     await axios.patch(`http://localhost:3000/cars/${car.id}`, {
       booked: !car.booked,
@@ -51,7 +76,6 @@ function AdminCars() {
     getCars();
   };
 
-  // ⭐ Toggle Trending
   const toggleTrending = async (car) => {
     await axios.patch(`http://localhost:3000/cars/${car.id}`, {
       trending: !car.trending,
@@ -59,88 +83,290 @@ function AdminCars() {
     getCars();
   };
 
+  // 📊 Stats
+  const totalCars = cars.length;
+  const bookedCars = cars.filter((c) => c.booked).length;
+  const revenue = cars
+    .filter((c) => c.booked)
+    .reduce((acc, c) => acc + Number(c.price), 0);
+  const profit = Math.floor(revenue * 0.3);
+
+  // 🔥 UPDATED BAR CHART COLORS ONLY
+  const salesData = {
+    labels: cars.map((c) => c.name),
+    datasets: [
+      {
+        label: "Car Price",
+        data: cars.map((c) => c.price),
+        backgroundColor: "rgba(255, 193, 7, 0.8)",
+        borderColor: "#ff9800",
+        borderWidth: 1,
+        borderRadius: 6,
+      },
+    ],
+  };
+
+  // 🔥 UPDATED LINE CHART COLORS ONLY
+  const profitData = {
+    labels: ["Revenue", "Profit"],
+    datasets: [
+      {
+        label: "Amount",
+        data: [revenue, profit],
+        borderColor: "#00e5ff",
+        backgroundColor: "rgba(0,229,255,0.15)",
+        tension: 0.4,
+        fill: true,
+        pointBackgroundColor: "#00e5ff",
+        pointBorderColor: "#ffffff",
+        pointRadius: 5,
+      },
+    ],
+  };
+
+  const chartOptions = {
+    responsive: true,
+    plugins: {
+      legend: {
+        labels: {
+          color: "#fff",
+        },
+      },
+    },
+    scales: {
+      x: {
+        ticks: {
+          color: "#ccc",
+        },
+        grid: {
+          color: "rgba(255,255,255,0.05)",
+        },
+      },
+      y: {
+        ticks: {
+          color: "#ccc",
+        },
+        grid: {
+          color: "rgba(255,255,255,0.05)",
+        },
+      },
+    },
+  };
+
   return (
-    <Container className="mt-4">
-      <h3>Add New Car 🚗</h3>
+    <div className="admin-layout">
 
-      {/* ➕ ADD FORM */}
-      <Form onSubmit={addCar} className="mb-4">
-        <Form.Control
-          className="mb-2"
-          placeholder="Car Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
+      {/* SIDEBAR */}
+      <div className="sidebar-theme">
+        <h3 className="mb-4">Admin Panel</h3>
 
-        <Form.Control
-          className="mb-2"
-          placeholder="Price"
-          value={price}
-          onChange={(e) => setPrice(e.target.value)}
-        />
+        <div className="nav-item active">Dashboard</div>
+        <div className="nav-item">Cars</div>
+        <div className="nav-item">Sales</div>
+      </div>
 
-        <Form.Control
-          className="mb-2"
-          placeholder="Image URL"
-          value={image}
-          onChange={(e) => setImage(e.target.value)}
-        />
+      {/* MAIN CONTENT */}
+      <div className="main-theme">
 
-        <Button type="submit">Add Car</Button>
-      </Form>
+        <h2 className="mb-4">Dashboard</h2>
 
-      {/* 📊 TABLE */}
-      <Table bordered hover>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Status</th>
-            <th>Trending</th>
-            <th>Action</th>
-          </tr>
-        </thead>
+        {/* STATS */}
+        <Row className="mb-4">
+          <Col md={3}>
+            <div className="theme-card">
+              <h4>{totalCars}</h4>
+              <p>Total Cars</p>
+            </div>
+          </Col>
 
-        <tbody>
-          {cars.map((car) => (
-            <tr key={car.id}>
-              <td>{car.name}</td>
-              <td>₹{car.price}</td>
+          <Col md={3}>
+            <div className="theme-card">
+              <h4>{bookedCars}</h4>
+              <p>Booked</p>
+            </div>
+          </Col>
 
-              {/* Booked */}
-              <td>
-                <Button
-                  variant={car.booked ? "danger" : "success"}
-                  onClick={() => toggleBooked(car)}
-                >
-                  {car.booked ? "Booked" : "Available"}
-                </Button>
-              </td>
+          <Col md={3}>
+            <div className="theme-card">
+              <h4>₹{revenue}</h4>
+              <p>Revenue</p>
+            </div>
+          </Col>
 
-              {/* Trending */}
-              <td>
-                <Button
-                  variant={car.trending ? "warning" : "secondary"}
-                  onClick={() => toggleTrending(car)}
-                >
-                  {car.trending ? "Yes" : "No"}
-                </Button>
-              </td>
+          <Col md={3}>
+            <div className="theme-card">
+              <h4>₹{profit}</h4>
+              <p>Profit</p>
+            </div>
+          </Col>
+        </Row>
 
-              {/* Delete */}
-              <td>
-                <Button
-                  variant="danger"
-                  onClick={() => deleteCar(car.id)}
-                >
-                  Delete
-                </Button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </Table>
-    </Container>
+        {/* CHARTS */}
+        <Row className="mb-4">
+          <Col md={6}>
+            <div className="theme-card">
+              <h5>Sales Graph</h5>
+              <Bar data={salesData} />
+            </div>
+          </Col>
+
+          <Col md={6}>
+            <div className="theme-card">
+              <h5>Profit Margin</h5>
+              <Line data={profitData} />
+            </div>
+          </Col>
+        </Row>
+
+        {/* ADD CAR */}
+        <div className="theme-card mb-4">
+          <h4>Add Car</h4>
+          <Form onSubmit={addCar}>
+            <Row>
+              <Col>
+                <Form.Control placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
+              </Col>
+              <Col>
+                <Form.Control placeholder="Price" value={price} onChange={(e) => setPrice(e.target.value)} />
+              </Col>
+              <Col>
+                <Form.Control placeholder="Image URL" value={image} onChange={(e) => setImage(e.target.value)} />
+              </Col>
+              <Col>
+                <Button className="yellow-btn w-100" type="submit">Add</Button>
+              </Col>
+            </Row>
+          </Form>
+        </div>
+
+        {/* TABLE */}
+        <div className="theme-card">
+          <h4>Car Management</h4>
+
+          <Table hover className="mt-3 text-white">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Status</th>
+                <th>Trending</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {cars.map((car) => (
+                <tr key={car.id}>
+                  <td>{car.name}</td>
+                  <td>₹{car.price}</td>
+
+                  <td>
+                    <Button
+                      size="sm"
+                      className={car.booked ? "btn-danger" : "yellow-btn"}
+                      onClick={() => toggleBooked(car)}
+                    >
+                      {car.booked ? "Booked" : "Available"}
+                    </Button>
+                  </td>
+
+                  <td>
+                    <Button
+                      size="sm"
+                      className="yellow-btn"
+                      onClick={() => toggleTrending(car)}
+                    >
+                      {car.trending ? "Yes" : "No"}
+                    </Button>
+                  </td>
+
+                  <td>
+                    <Button
+                      size="sm"
+                      variant="danger"
+                      onClick={() => deleteCar(car.id)}
+                    >
+                      Delete
+                    </Button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        </div>
+
+      </div>
+
+      {/* STYLE */}
+      <style>{`
+        .admin-layout {
+          display: flex;
+          background: #0b0b0b;
+          min-height: 100vh;
+          color: #fff;
+        }
+
+        .sidebar-theme {
+          width: 220px;
+          background: #111;
+          padding: 20px;
+          border-right: 1px solid #222;
+        }
+
+        .nav-item {
+          padding: 10px;
+          margin: 10px 0;
+          border-radius: 8px;
+          color: #aaa;
+          cursor: pointer;
+        }
+
+        .nav-item:hover {
+          background: #ffc107;
+          color: #000;
+        }
+
+        .nav-item.active {
+          background: #ffc107;
+          color: #000;
+          font-weight: bold;
+        }
+
+        .main-theme {
+          flex: 1;
+          padding: 25px;
+        }
+
+        .theme-card {
+          background: #111;
+          padding: 20px;
+          border-radius: 12px;
+          border: 1px solid rgba(255,193,7,0.2);
+          transition: 0.3s;
+        }
+
+        .theme-card:hover {
+          box-shadow: 0 0 20px rgba(255,193,7,0.3);
+          transform: translateY(-3px);
+        }
+
+        th {
+          color: #ffc107;
+        }
+
+        input {
+          background: #1a1a1a !important;
+          border: 1px solid #333 !important;
+          color: #fff !important;
+        }
+
+        input:focus {
+          border-color: #ffc107 !important;
+          box-shadow: 0 0 8px rgba(255,193,7,0.4);
+        }
+      `}</style>
+
+    </div>
   );
 }
 

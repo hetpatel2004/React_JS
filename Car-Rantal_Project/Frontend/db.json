@@ -35,7 +35,7 @@
       "name": "BMW X5",
       "price": 5000,
       "image": "https://source.unsplash.com/400x300/?bmw-x5",
-      "booked": false,
+      "booked": true,
       "trending": true
     },
     {
@@ -43,7 +43,7 @@
       "name": "Tesla Model 3",
       "price": 4500,
       "image": "https://source.unsplash.com/400x300/?tesla",
-      "booked": true,
+      "booked": false,
       "trending": true
     },
     {
@@ -51,7 +51,7 @@
       "name": "Audi Q7",
       "price": 5200,
       "image": "https://source.unsplash.com/400x300/?audi-q7",
-      "booked": false,
+      "booked": true,
       "trending": false
     },
     {
@@ -59,7 +59,7 @@
       "name": "Mercedes-Benz G-Wagon",
       "price": 8500,
       "image": "https://source.unsplash.com/400x300/?g-wagon",
-      "booked": false,
+      "booked": true,
       "trending": true
     },
     {
@@ -83,7 +83,7 @@
       "name": "Range Rover Sport",
       "price": 6000,
       "image": "https://source.unsplash.com/400x300/?range-rover",
-      "booked": true,
+      "booked": false,
       "trending": false
     }
   ],
