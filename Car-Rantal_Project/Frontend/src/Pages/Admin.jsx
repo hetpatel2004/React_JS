@@ -1,13 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import {
-  Form,
-  Button,
-  Table,
-  Row,
-  Col,
-  Card,
-} from "react-bootstrap";
+import { Form, Button, Table, Row, Col, Card } from "react-bootstrap";
 
 import {
   Chart as ChartJS,
@@ -21,7 +14,7 @@ import {
 } from "chart.js";
 
 import { Bar, Line } from "react-chartjs-2";
-
+import { useNavigate } from "react-router-dom";
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -29,7 +22,7 @@ ChartJS.register(
   LineElement,
   PointElement,
   Tooltip,
-  Legend
+  Legend,
 );
 
 function AdminCars() {
@@ -37,7 +30,11 @@ function AdminCars() {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
+  const navigate = useNavigate();
 
+  const handleLogout = () => {
+    navigate("/"); // or "/index" if your route is different
+  };
   const getCars = async () => {
     const res = await axios.get("http://localhost:3000/cars");
     setCars(res.data);
@@ -155,7 +152,6 @@ function AdminCars() {
 
   return (
     <div className="admin-layout">
-
       {/* SIDEBAR */}
       <div className="sidebar-theme">
         <h3 className="mb-4">Admin Panel</h3>
@@ -167,8 +163,14 @@ function AdminCars() {
 
       {/* MAIN CONTENT */}
       <div className="main-theme">
+        <div className="top-bar">
+          <h2>Dashboard</h2>
 
-        <h2 className="mb-4">Dashboard</h2>
+          <Button className="logout-btn" onClick={handleLogout}>
+            Logout
+          </Button>
+        </div>
+      
 
         {/* STATS */}
         <Row className="mb-4">
@@ -224,16 +226,30 @@ function AdminCars() {
           <Form onSubmit={addCar}>
             <Row>
               <Col>
-                <Form.Control placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
+                <Form.Control
+                  placeholder="Name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
               </Col>
               <Col>
-                <Form.Control placeholder="Price" value={price} onChange={(e) => setPrice(e.target.value)} />
+                <Form.Control
+                  placeholder="Price"
+                  value={price}
+                  onChange={(e) => setPrice(e.target.value)}
+                />
               </Col>
               <Col>
-                <Form.Control placeholder="Image URL" value={image} onChange={(e) => setImage(e.target.value)} />
+                <Form.Control
+                  placeholder="Image URL"
+                  value={image}
+                  onChange={(e) => setImage(e.target.value)}
+                />
               </Col>
               <Col>
-                <Button className="yellow-btn w-100" type="submit">Add</Button>
+                <Button className="yellow-btn w-100" type="submit">
+                  Add
+                </Button>
               </Col>
             </Row>
           </Form>
@@ -294,7 +310,6 @@ function AdminCars() {
             </tbody>
           </Table>
         </div>
-
       </div>
 
       {/* STYLE */}
@@ -364,8 +379,26 @@ function AdminCars() {
           border-color: #ffc107 !important;
           box-shadow: 0 0 8px rgba(255,193,7,0.4);
         }
-      `}</style>
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
 
+.logout-btn {
+  background: #dc3545;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.logout-btn:hover {
+  background: #bb2d3b;
+}       
+      `}</style>
     </div>
   );
 }
