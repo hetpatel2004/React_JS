@@ -23,6 +23,7 @@ function Register() {
         name,
         email,
         password,
+        
       });
 
       alert("Registered Successfully");
@@ -68,7 +69,6 @@ function Register() {
                   required
                 />
               </Form.Group>
-
               {/* Email */}
               <Form.Group className="mb-3">
                 <Form.Label>Email</Form.Label>

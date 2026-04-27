@@ -1,14 +1,14 @@
 {
   "user": [
     {
-      "id": "1",
+      "name": "het",
       "email": "het@gmail.com",
-      "password": "het@123"
+      "id": "1"
     },
     {
-      "id": "2",
+      "name": "aastah",
       "email": "aastha@gmail.com",
-      "password": "aastha@123"
+      "id": "2"
     },
     {
       "name": "aashu",
@@ -17,14 +17,13 @@
       "id": "Y65o4SzOFN0"
     },
     {
-      "name": "wHEFIWULgefuigwifgi",
-      "password": "672836789528",
-      "email": "het.patel.010420047@gmail.com",
+      "name": "tasting",
+      "email": "tasting@gmail.com",
+      "password": "abc",
       "id": "o62gqq2VWvg"
     },
     {
-      "name": "helllo",
-      "password": "4564654654654563",
+      "name": "hello",
       "email": "hello@gmail.com",
       "id": "cCgxZTQsatI"
     }
@@ -36,7 +35,7 @@
       "price": 5000,
       "image": "https://source.unsplash.com/400x300/?bmw-x5",
       "booked": true,
-      "trending": true
+      "trending": false
     },
     {
       "id": "2",

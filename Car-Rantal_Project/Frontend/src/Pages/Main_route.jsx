@@ -10,7 +10,9 @@ import Ragister from './Ragister'
 import Available_cars from './Available_cars'
 import Contect from './Contect'
 import Home from './Home'
-import Admin from './Admin'
+import Admin from "./Admin/Admin"
+import AdminUsers from './Admin/AdminUsers_details'
+import AdminCarsPage from './Admin/AdminCarsPage'
 function Main_route() {
   return (<>
     <Routes>
@@ -22,6 +24,8 @@ function Main_route() {
         <Route path="/ragister" element={<Ragister/>}/>
          <Route path="/home" element={< Home/>} />
         <Route path="/admin" element={<Admin />} />
+        <Route path= "/admin-users" element={<AdminUsers/>}/>
+        <Route path="/admin-cars" element={<AdminCarsPage />} />
     </Routes>
 
   </>

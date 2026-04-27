@@ -1,40 +1,16 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Form, Button, Table, Row, Col, Card } from "react-bootstrap";
-
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  LineElement,
-  PointElement,
-  Tooltip,
-  Legend,
-} from "chart.js";
-
-import { Bar, Line } from "react-chartjs-2";
+import { Form, Button, Table, Row, Col } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  LineElement,
-  PointElement,
-  Tooltip,
-  Legend,
-);
 
-function AdminCars() {
+function AdminCarsPage() {
   const [cars, setCars] = useState([]);
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
+
   const navigate = useNavigate();
 
-  const handleLogout = () => {
-    navigate("/"); // or "/index" if your route is different
-  };
   const getCars = async () => {
     const res = await axios.get("http://localhost:3000/cars");
     setCars(res.data);
@@ -80,173 +56,63 @@ function AdminCars() {
     getCars();
   };
 
-  // 📊 Stats
-  const totalCars = cars.length;
-  const bookedCars = cars.filter((c) => c.booked).length;
-  const revenue = cars
-    .filter((c) => c.booked)
-    .reduce((acc, c) => acc + Number(c.price), 0);
-  const profit = Math.floor(revenue * 0.3);
-
-  // 🔥 UPDATED BAR CHART COLORS ONLY
-  const salesData = {
-    labels: cars.map((c) => c.name),
-    datasets: [
-      {
-        label: "Car Price",
-        data: cars.map((c) => c.price),
-        backgroundColor: "rgba(255, 193, 7, 0.8)",
-        borderColor: "#ff9800",
-        borderWidth: 1,
-        borderRadius: 6,
-      },
-    ],
-  };
-
-  // 🔥 UPDATED LINE CHART COLORS ONLY
-  const profitData = {
-    labels: ["Revenue", "Profit"],
-    datasets: [
-      {
-        label: "Amount",
-        data: [revenue, profit],
-        borderColor: "#00e5ff",
-        backgroundColor: "rgba(0,229,255,0.15)",
-        tension: 0.4,
-        fill: true,
-        pointBackgroundColor: "#00e5ff",
-        pointBorderColor: "#ffffff",
-        pointRadius: 5,
-      },
-    ],
-  };
-
-  const chartOptions = {
-    responsive: true,
-    plugins: {
-      legend: {
-        labels: {
-          color: "#fff",
-        },
-      },
-    },
-    scales: {
-      x: {
-        ticks: {
-          color: "#ccc",
-        },
-        grid: {
-          color: "rgba(255,255,255,0.05)",
-        },
-      },
-      y: {
-        ticks: {
-          color: "#ccc",
-        },
-        grid: {
-          color: "rgba(255,255,255,0.05)",
-        },
-      },
-    },
-  };
-
   return (
     <div className="admin-layout">
+
       {/* SIDEBAR */}
       <div className="sidebar-theme">
         <h3 className="mb-4">Admin Panel</h3>
 
-        <div className="nav-item active">Dashboard</div>
-        <div className="nav-item">Cars</div>
-        <div className="nav-item">Sales</div>
+        <div className="nav-item" onClick={() => navigate("/admin")}>
+          Dashboard
+        </div>
+
+        <div className="nav-item active">Cars</div>
+
+        <div className="nav-item" onClick={() => navigate("/admin-users")}>
+          Users
+        </div>
       </div>
 
-      {/* MAIN CONTENT */}
+      {/* MAIN */}
       <div className="main-theme">
+
+        {/* HEADER */}
         <div className="top-bar">
-          <h2>Dashboard</h2>
-
-          <Button className="logout-btn" onClick={handleLogout}>
-            Logout
-          </Button>
+          <h2>Car Management</h2>
         </div>
-      
-
-        {/* STATS */}
-        <Row className="mb-4">
-          <Col md={3}>
-            <div className="theme-card">
-              <h4>{totalCars}</h4>
-              <p>Total Cars</p>
-            </div>
-          </Col>
-
-          <Col md={3}>
-            <div className="theme-card">
-              <h4>{bookedCars}</h4>
-              <p>Booked</p>
-            </div>
-          </Col>
-
-          <Col md={3}>
-            <div className="theme-card">
-              <h4>₹{revenue}</h4>
-              <p>Revenue</p>
-            </div>
-          </Col>
-
-          <Col md={3}>
-            <div className="theme-card">
-              <h4>₹{profit}</h4>
-              <p>Profit</p>
-            </div>
-          </Col>
-        </Row>
-
-        {/* CHARTS */}
-        <Row className="mb-4">
-          <Col md={6}>
-            <div className="theme-card">
-              <h5>Sales Graph</h5>
-              <Bar data={salesData} />
-            </div>
-          </Col>
-
-          <Col md={6}>
-            <div className="theme-card">
-              <h5>Profit Margin</h5>
-              <Line data={profitData} />
-            </div>
-          </Col>
-        </Row>
 
         {/* ADD CAR */}
         <div className="theme-card mb-4">
-          <h4>Add Car</h4>
+          <h4>Add New Car</h4>
+
           <Form onSubmit={addCar}>
-            <Row>
-              <Col>
+            <Row className="g-3">
+              <Col md={4}>
                 <Form.Control
-                  placeholder="Name"
+                  placeholder="Car Name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
               </Col>
-              <Col>
+
+              <Col md={3}>
                 <Form.Control
-                  placeholder="Price"
+                  placeholder="Price ₹"
                   value={price}
                   onChange={(e) => setPrice(e.target.value)}
                 />
               </Col>
-              <Col>
+
+              <Col md={3}>
                 <Form.Control
                   placeholder="Image URL"
                   value={image}
                   onChange={(e) => setImage(e.target.value)}
                 />
               </Col>
-              <Col>
+
+              <Col md={2}>
                 <Button className="yellow-btn w-100" type="submit">
                   Add
                 </Button>
@@ -257,16 +123,16 @@ function AdminCars() {
 
         {/* TABLE */}
         <div className="theme-card">
-          <h4>Car Management</h4>
+          <h4>All Cars</h4>
 
-          <Table hover className="mt-3 text-white">
+          <Table hover className="mt-3 text-white align-middle">
             <thead>
               <tr>
                 <th>Name</th>
                 <th>Price</th>
                 <th>Status</th>
                 <th>Trending</th>
-                <th>Action</th>
+                <th style={{ width: "150px" }}>Action</th>
               </tr>
             </thead>
 
@@ -310,9 +176,10 @@ function AdminCars() {
             </tbody>
           </Table>
         </div>
+
       </div>
 
-      {/* STYLE */}
+      {/* STYLES */}
       <style>{`
         .admin-layout {
           display: flex;
@@ -334,6 +201,7 @@ function AdminCars() {
           border-radius: 8px;
           color: #aaa;
           cursor: pointer;
+          transition: 0.3s;
         }
 
         .nav-item:hover {
@@ -350,6 +218,10 @@ function AdminCars() {
         .main-theme {
           flex: 1;
           padding: 25px;
+        }
+
+        .top-bar {
+          margin-bottom: 20px;
         }
 
         .theme-card {
@@ -379,28 +251,21 @@ function AdminCars() {
           border-color: #ffc107 !important;
           box-shadow: 0 0 8px rgba(255,193,7,0.4);
         }
-.top-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
 
-.logout-btn {
-  background: #dc3545;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 8px;
-  color: #fff;
-  font-weight: bold;
-}
+        .yellow-btn {
+          background: #ffc107;
+          border: none;
+          color: #000;
+          font-weight: bold;
+          border-radius: 8px;
+        }
 
-.logout-btn:hover {
-  background: #bb2d3b;
-}       
+        .yellow-btn:hover {
+          background: #e0a800;
+        }
       `}</style>
     </div>
   );
 }
 
-export default AdminCars;
+export default AdminCarsPage;

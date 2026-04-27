@@ -418,8 +418,9 @@ function Index_two() {
       </div>
 
       {/* ---------------------------------------------------------------------------------------------------------- */}
+      <Container className="pt-5 ">
       <Row className="g-3 px-4">
-        {" "}
+        {/* {" "} */}
         {/* adds left-right space */}
         {/* COLUMN 1 */}
         <Col md={4}>
@@ -455,6 +456,7 @@ function Index_two() {
           </div>
         </Col>
       </Row>
+      </Container>
 
       {/* -------------------------------------------------------------------------------------------- */}
       <section className="delivery-section">
@@ -573,12 +575,7 @@ function Index_two() {
             <h4>Rent a car or share yours — all in one easy app</h4>
 
             <div className="mt-3">
-              <Button variant="dark" className="me-2 border">
-                App Store
-              </Button>
-              <Button variant="dark" className="border">
-                Google Play
-              </Button>
+              
             </div>
           </Col>
 
