@@ -10,53 +10,54 @@ function Login() {
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  console.log("Entered:", email, password);
+    const cleanEmail = email.toLowerCase().trim();
+    const cleanPassword = password.trim();
 
-  // ADMIN LOGIN
-  if (
-    email.toLowerCase().trim() === "het@gmail.com" &&
-    password.trim() === "het@123"
-  ) {
-    alert("Admin Login Successful");
-    navigate("/admin");
-    return;
-  }
+    // ✅ ADMIN LOGIN FIX
+    if (cleanEmail === "het@gmail.com" && cleanPassword === "het@123") {
+      alert("Admin Login Successful");
 
-  try {
-    const res = await axios.get("http://localhost:3000/user");
+      // save login (optional but recommended)
+      localStorage.setItem("role", "admin");
 
-    console.log("DB Data:", res.data);
-
-    const user = res.data.find(
-      (u) =>
-        u.email.toLowerCase().trim() === email.toLowerCase().trim() &&
-        u.password.trim() === password.trim()
-    );
-
-    if (user) {
-      alert("User Login Successful");
-      navigate("/home");
-    } else {
-      alert("Invalid Email or Password");
+      navigate("/admin");
+      return;
     }
-  } catch (error) {
-    console.error(error);
-    alert("Server Error");
-  }
-};
+
+    try {
+      const res = await axios.get("http://localhost:3000/user");
+
+      const user = res.data.find(
+        (u) =>
+          u.email.toLowerCase().trim() === cleanEmail &&
+          u.password.trim() === cleanPassword
+      );
+
+      if (user) {
+        alert("User Login Successful");
+
+        // ✅ store user session
+        localStorage.setItem("role", "user");
+        localStorage.setItem("user", JSON.stringify(user));
+
+        navigate("/user");
+      } else {
+        alert("Invalid Email or Password");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Server Error");
+    }
+  };
+
   return (
     <Container fluid className="vh-100">
       <Row className="h-100">
-        {/* 🔵 LEFT SIDE IMAGE */}
-        <Col
-          md={6}
-          className="d-none d-md-flex align-items-center justify-content-center"
-          // style={{
-          //   background: "linear-gradient(135deg, #1e3c72, #2a5298)",
-          // }}
-        >
+
+        {/* LEFT IMAGE */}
+        <Col md={6} className="d-none d-md-flex">
           <div
             style={{
               width: "100%",
@@ -67,12 +68,9 @@ function Login() {
               position: "relative",
             }}
           >
-            {/* 🔥 Dark Gradient Overlay */}
             <div
               style={{
                 position: "absolute",
-                top: 0,
-                left: 0,
                 width: "100%",
                 height: "100%",
                 background:
@@ -82,13 +80,11 @@ function Login() {
           </div>
         </Col>
 
-        {/* 🟣 RIGHT SIDE LOGIN */}
+        {/* RIGHT LOGIN */}
         <Col
           md={6}
           className="d-flex justify-content-center align-items-center"
-          style={{
-            background: "#f8f9fa",
-          }}
+          style={{ background: "#f8f9fa" }}
         >
           <Card
             className="p-4"
@@ -98,12 +94,11 @@ function Login() {
               boxShadow: "0 10px 30px rgba(0,0,0,0.2)",
             }}
           >
-            <h2 className="text-center mb-4" style={{ fontWeight: "bold" }}>
-              Welcome Back 
+            <h2 className="text-center mb-4 fw-bold">
+              Welcome Back
             </h2>
 
             <Form onSubmit={handleLogin}>
-              {/* Email */}
               <Form.Group className="mb-3">
                 <Form.Label>Email</Form.Label>
                 <Form.Control
@@ -111,12 +106,10 @@ function Login() {
                   placeholder="Enter email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  style={{ borderRadius: "10px" }}
                   required
                 />
               </Form.Group>
 
-              {/* Password */}
               <Form.Group className="mb-3">
                 <Form.Label>Password</Form.Label>
                 <Form.Control
@@ -124,38 +117,18 @@ function Login() {
                   placeholder="Enter password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  style={{ borderRadius: "10px" }}
                   required
                 />
               </Form.Group>
 
-              {/* Login Button */}
-              <Button
-                variant="dark"
-                type="submit"
-                className="w-100"
-                style={{
-                  borderRadius: "10px",
-                  padding: "10px",
-                  fontWeight: "bold",
-                }}
-              >
+              <Button variant="dark" type="submit" className="w-100">
                 Login
               </Button>
 
-              {/* Register Link */}
-              <p className="text-center mt-3" style={{ fontSize: "14px" }}>
-                If you are a new user?{" "}
-                <Link
-                  to="/ragister"
-                  style={{
-                    fontWeight: "bold",
-                    color: "#2a5298",
-                    textDecoration: "none",
-                  }}
-                >
-                  Create Account
-                </Link>
+              <p className="text-center mt-3">
+                New user?{" "}
+                {/* <Link to="/ragister">Create Account</Link> */}
+                <Link to={"/register"}>create Account</Link>
               </p>
             </Form>
           </Card>

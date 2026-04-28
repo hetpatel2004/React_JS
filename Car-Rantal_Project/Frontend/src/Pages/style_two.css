@@ -505,3 +505,62 @@ body {
 .map-card h6 {
   margin-bottom: 10px;
 }
+
+
+
+.user-layout {
+  display: flex;
+  background: #0b0b0b;
+  min-height: 100vh;
+  color: #fff;
+}
+
+/* SIDEBAR */
+.sidebar-theme {
+  width: 230px;
+  background: #111;
+  padding: 20px;
+  border-right: 1px solid #222;
+}
+
+.nav-item {
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+  color: #aaa;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-item:hover {
+  background: #ffc107;
+  color: #000;
+  transform: translateX(5px);
+}
+
+.nav-item.active {
+  background: #ffc107;
+  color: #000;
+  font-weight: bold;
+}
+
+.nav-item.logout {
+  margin-top: 30px;
+  background: #dc3545;
+  color: #fff;
+}
+
+.nav-item.logout:hover {
+  background: #bb2d3b;
+}
+
+/* MAIN */
+.main-theme {
+  flex: 1;
+  overflow-x: hidden;
+}
+
+/* FIX CONTENT WIDTH */
+.main-theme > * {
+  max-width: 100%;
+}

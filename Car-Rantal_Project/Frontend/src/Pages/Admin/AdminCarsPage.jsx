@@ -1,64 +1,62 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import { Form, Button, Table, Row, Col } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+
+import {
+  fetchCars,
+  addCar,
+  deleteCar,
+  toggleBooked,
+  toggleTrending,
+} from "../redux/carsSlice";
 
 function AdminCarsPage() {
-  const [cars, setCars] = useState([]);
+  const dispatch = useDispatch();
+  const cars = useSelector((state) => state.cars.cars);
+
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
 
   const navigate = useNavigate();
 
-  const getCars = async () => {
-    const res = await axios.get("http://localhost:3000/cars");
-    setCars(res.data);
-  };
+  const handleLogout = () => {
+  localStorage.removeItem("user"); // optional
+  navigate("/"); // or "/"
+};
+
+useEffect(() => {
+  const user = localStorage.getItem("user");
+  if (!user) navigate("/login");
+}, [navigate]);
 
   useEffect(() => {
-    getCars();
-  }, []);
+    dispatch(fetchCars());
+  }, [dispatch]);
 
-  const addCar = async (e) => {
+  const handleAdd = (e) => {
     e.preventDefault();
 
-    await axios.post("http://localhost:3000/cars", {
-      name,
-      price,
-      image,
-      booked: false,
-      trending: false,
-    });
+    dispatch(
+      addCar({
+        name,
+        price,
+        image,
+        booked: false,
+        trending: false,
+      }),
+    );
 
     setName("");
     setPrice("");
     setImage("");
-    getCars();
-  };
 
-  const deleteCar = async (id) => {
-    await axios.delete(`http://localhost:3000/cars/${id}`);
-    getCars();
-  };
-
-  const toggleBooked = async (car) => {
-    await axios.patch(`http://localhost:3000/cars/${car.id}`, {
-      booked: !car.booked,
-    });
-    getCars();
-  };
-
-  const toggleTrending = async (car) => {
-    await axios.patch(`http://localhost:3000/cars/${car.id}`, {
-      trending: !car.trending,
-    });
-    getCars();
+    dispatch(fetchCars());
   };
 
   return (
     <div className="admin-layout">
-
       {/* SIDEBAR */}
       <div className="sidebar-theme">
         <h3 className="mb-4">Admin Panel</h3>
@@ -76,39 +74,43 @@ function AdminCarsPage() {
 
       {/* MAIN */}
       <div className="main-theme">
-
         {/* HEADER */}
+
         <div className="top-bar">
           <h2>Car Management</h2>
+
+          <Button className="logout-btn" onClick={handleLogout}>
+            Logout
+          </Button>
         </div>
 
-        {/* ADD CAR */}
+        {/* ADD CARD */}
         <div className="theme-card mb-4">
           <h4>Add New Car</h4>
 
-          <Form onSubmit={addCar}>
+          <Form onSubmit={handleAdd}>
             <Row className="g-3">
               <Col md={4}>
                 <Form.Control
-                  placeholder="Car Name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
+                  placeholder="Car Name"
                 />
               </Col>
 
               <Col md={3}>
                 <Form.Control
-                  placeholder="Price ₹"
                   value={price}
                   onChange={(e) => setPrice(e.target.value)}
+                  placeholder="Price ₹"
                 />
               </Col>
 
               <Col md={3}>
                 <Form.Control
-                  placeholder="Image URL"
                   value={image}
                   onChange={(e) => setImage(e.target.value)}
+                  placeholder="Image URL"
                 />
               </Col>
 
@@ -121,11 +123,11 @@ function AdminCarsPage() {
           </Form>
         </div>
 
-        {/* TABLE */}
+        {/* TABLE CARD */}
         <div className="theme-card">
           <h4>All Cars</h4>
 
-          <Table hover className="mt-3 text-white align-middle">
+          <Table hover responsive className="mt-3 text-white align-middle">
             <thead>
               <tr>
                 <th>Name</th>
@@ -145,8 +147,16 @@ function AdminCarsPage() {
                   <td>
                     <Button
                       size="sm"
-                      className={car.booked ? "btn-danger" : "yellow-btn"}
-                      onClick={() => toggleBooked(car)}
+                      className={
+                        car.booked
+                          ? "btn-danger status-btn"
+                          : "yellow-btn status-btn"
+                      }
+                      onClick={() =>
+                        dispatch(toggleBooked(car)).then(() =>
+                          dispatch(fetchCars()),
+                        )
+                      }
                     >
                       {car.booked ? "Booked" : "Available"}
                     </Button>
@@ -155,8 +165,12 @@ function AdminCarsPage() {
                   <td>
                     <Button
                       size="sm"
-                      className="yellow-btn"
-                      onClick={() => toggleTrending(car)}
+                      className="yellow-btn status-btn"
+                      onClick={() =>
+                        dispatch(toggleTrending(car)).then(() =>
+                          dispatch(fetchCars()),
+                        )
+                      }
                     >
                       {car.trending ? "Yes" : "No"}
                     </Button>
@@ -166,7 +180,8 @@ function AdminCarsPage() {
                     <Button
                       size="sm"
                       variant="danger"
-                      onClick={() => deleteCar(car.id)}
+                      className="delete-btn"
+                      onClick={() => dispatch(deleteCar(car.id))}
                     >
                       Delete
                     </Button>
@@ -176,7 +191,6 @@ function AdminCarsPage() {
             </tbody>
           </Table>
         </div>
-
       </div>
 
       {/* STYLES */}
@@ -196,9 +210,9 @@ function AdminCarsPage() {
         }
 
         .nav-item {
-          padding: 10px;
+          padding: 12px;
           margin: 10px 0;
-          border-radius: 8px;
+          border-radius: 10px;
           color: #aaa;
           cursor: pointer;
           transition: 0.3s;
@@ -207,6 +221,7 @@ function AdminCarsPage() {
         .nav-item:hover {
           background: #ffc107;
           color: #000;
+          transform: translateX(5px);
         }
 
         .nav-item.active {
@@ -227,14 +242,14 @@ function AdminCarsPage() {
         .theme-card {
           background: #111;
           padding: 20px;
-          border-radius: 12px;
+          border-radius: 14px;
           border: 1px solid rgba(255,193,7,0.2);
           transition: 0.3s;
         }
 
         .theme-card:hover {
-          box-shadow: 0 0 20px rgba(255,193,7,0.3);
-          transform: translateY(-3px);
+          box-shadow: 0 0 25px rgba(255,193,7,0.25);
+          transform: translateY(-4px);
         }
 
         th {
@@ -263,6 +278,35 @@ function AdminCarsPage() {
         .yellow-btn:hover {
           background: #e0a800;
         }
+
+        .status-btn {
+          min-width: 100px;
+        }
+
+        .delete-btn {
+          border-radius: 8px;
+          font-weight: bold;
+        }
+        .top-bar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 20px;
+        }
+
+        .logout-btn {
+          background: #dc3545;
+          border: none;
+          padding: 8px 16px;
+          border-radius: 8px;
+          color: #fff;
+          font-weight: bold;
+        }
+
+        .logout-btn:hover {
+          background: #bb2d3b;
+        }
+        
       `}</style>
     </div>
   );

@@ -11,6 +11,7 @@ import {
   PointElement,
   Tooltip,
   Legend,
+  Filler,
 } from "chart.js";
 
 import { Bar, Line } from "react-chartjs-2";
@@ -23,6 +24,7 @@ ChartJS.register(
   PointElement,
   Tooltip,
   Legend,
+  Filler
 );
 
 function AdminCars() {
@@ -40,12 +42,11 @@ function AdminCars() {
     setCars(res.data);
   };
   
-  useEffect(()=>{
-    localStorage.getItem(name)
-    if (!name) {
-      navigate("/login")
-    }
-  })
+  useEffect(() => {
+  const user = localStorage.getItem("user");
+  if (!user) navigate("/login");
+}, [navigate]);
+
   useEffect(() => {
     getCars();
   }, []);

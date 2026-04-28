@@ -1,10 +1,18 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import { Form, Button, Table, Row, Col } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+
+import {
+  fetchUsers,
+  addUser,
+  updateUser,
+  deleteUser,
+} from "../redux/usersSlice";
 
 function AdminUsers() {
-  const [users, setUsers] = useState([]);
+  const dispatch = useDispatch();
+  const users = useSelector((state) => state.users.users);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -13,49 +21,46 @@ function AdminUsers() {
 
   const navigate = useNavigate();
 
-  // GET USERS ✅ FIXED API
-  const getUsers = async () => {
-    const res = await axios.get("http://localhost:3000/user");
-    setUsers(res.data);
+  useEffect(() => {
+  const user = localStorage.getItem("user");
+  if (!user) navigate("/login");
+}, [navigate]);
+
+  // ✅ GET USERS
+  useEffect(() => {
+    dispatch(fetchUsers());
+  }, [dispatch]);
+
+  // ✅ LOGOUT
+  const handleLogout = () => {
+    localStorage.removeItem("user"); // optional
+    navigate("/"); // or "/"
   };
 
-  useEffect(() => {
-    getUsers();
-  }, []);
-
-  // ADD / UPDATE USER
-  const handleSubmit = async (e) => {
+  // ✅ ADD / UPDATE
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     if (editId) {
-      await axios.put(`http://localhost:3000/user/${editId}`, {
-        name,
-        email,
-        password, // ✅ added
-      });
+      dispatch(
+        updateUser({
+          id: editId,
+          data: { name, email, password },
+        })
+      );
       setEditId(null);
     } else {
-      await axios.post("http://localhost:3000/user", {
-        name,
-        email,
-        password, // ✅ added
-      });
+      dispatch(addUser({ name, email, password }));
     }
 
-    // ✅ clear all inputs
     setName("");
     setEmail("");
     setPassword("");
 
-    getUsers();
-  };
-  // DELETE USER
-  const deleteUser = async (id) => {
-    await axios.delete(`http://localhost:3000/user/${id}`);
-    getUsers();
+    dispatch(fetchUsers());
   };
 
-  // EDIT USER
+  // ✅ EDIT
   const editUser = (user) => {
     setName(user.name);
     setEmail(user.email);
@@ -65,6 +70,7 @@ function AdminUsers() {
 
   return (
     <div className="admin-layout">
+
       {/* SIDEBAR */}
       <div className="sidebar-theme">
         <h3 className="mb-4">Admin Panel</h3>
@@ -74,7 +80,7 @@ function AdminUsers() {
         </div>
 
         <div className="nav-item active">Users</div>
-        
+
         <div className="nav-item" onClick={() => navigate("/admin-cars")}>
           Cars
         </div>
@@ -82,32 +88,42 @@ function AdminUsers() {
 
       {/* MAIN */}
       <div className="main-theme">
+
+        {/* 🔥 TOP BAR */}
+        <div className="top-bar">
+          <h2>User Management</h2>
+
+          <Button className="logout-btn" onClick={handleLogout}>
+            Logout
+          </Button>
+        </div>
+
         {/* FORM */}
         <div className="theme-card mb-4">
           <h4>{editId ? "Edit User" : "Add User"}</h4>
 
           <Form onSubmit={handleSubmit}>
-            <Row>
-              <Col md={5}>
+            <Row className="g-3">
+              <Col md={4}>
                 <Form.Control
-                  placeholder="Enter Name"
+                  placeholder="Name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
               </Col>
 
-              <Col md={5}>
+              <Col md={4}>
                 <Form.Control
-                  placeholder="Enter Email"
+                  placeholder="Email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </Col>
 
-              <Col md={5}>
+              <Col md={4}>
                 <Form.Control
                   type="password"
-                  placeholder="Enter Password"
+                  placeholder="Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
@@ -126,15 +142,7 @@ function AdminUsers() {
         <div className="theme-card">
           <h4>Users List</h4>
 
-          <Table hover className="mt-3 text-white">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th style={{ width: "180px" }}>Action</th>
-              </tr>
-            </thead>
-
+          <Table hover className="mt-3 text-white align-middle">
             <tbody>
               {users.map((user) => (
                 <tr key={user.id}>
@@ -153,7 +161,10 @@ function AdminUsers() {
                     <Button
                       size="sm"
                       variant="danger"
-                      onClick={() => deleteUser(user.id)}
+                      onClick={() => {
+                        dispatch(deleteUser(user.id));
+                        dispatch(fetchUsers());
+                      }}
                     >
                       Delete
                     </Button>
@@ -212,16 +223,17 @@ function AdminUsers() {
           margin-bottom: 20px;
         }
 
-        .back-btn {
-          background: #ffc107;
+        .logout-btn {
+          background: #dc3545;
           border: none;
-          color: #000;
-          font-weight: bold;
+          padding: 8px 16px;
           border-radius: 8px;
+          color: #fff;
+          font-weight: bold;
         }
 
-        .back-btn:hover {
-          background: #e0a800;
+        .logout-btn:hover {
+          background: #bb2d3b;
         }
 
         .theme-card {
@@ -229,12 +241,6 @@ function AdminUsers() {
           padding: 20px;
           border-radius: 12px;
           border: 1px solid rgba(255,193,7,0.2);
-          transition: 0.3s;
-        }
-
-        .theme-card:hover {
-          box-shadow: 0 0 20px rgba(255,193,7,0.3);
-          transform: translateY(-3px);
         }
 
         th {
@@ -247,9 +253,12 @@ function AdminUsers() {
           color: #fff !important;
         }
 
-        input:focus {
-          border-color: #ffc107 !important;
-          box-shadow: 0 0 8px rgba(255,193,7,0.4);
+        .yellow-btn {
+          background: #ffc107;
+          border: none;
+          color: #000;
+          font-weight: bold;
+          border-radius: 8px;
         }
       `}</style>
     </div>
