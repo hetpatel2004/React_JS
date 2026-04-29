@@ -42,10 +42,10 @@ function AdminCars() {
     setCars(res.data);
   };
   
-  useEffect(() => {
-  const user = localStorage.getItem("user");
-  if (!user) navigate("/login");
-}, [navigate]);
+//   useEffect(() => {
+//   const user = localStorage.getItem("user");
+//   if (!user) navigate("/login");
+// }, [navigate]);
 
   useEffect(() => {
     getCars();
