@@ -1,0 +1,255 @@
+{
+  "user": [
+    {
+      "name": "het",
+      "email": "het@gmail.com",
+      "id": "1"
+    },
+    {
+      "name": "aastah",
+      "email": "aastha@gmail.com",
+      "id": "2"
+    },
+    {
+      "name": "aashu",
+      "password": "aashu",
+      "email": "aashu@gmail.com",
+      "id": "Y65o4SzOFN0"
+    },
+    {
+      "name": "tasting",
+      "email": "tasting@gmail.com",
+      "password": "abc",
+      "id": "o62gqq2VWvg"
+    },
+    {
+      "name": "hyy",
+      "email": "hello@gmail.com",
+      "password": "abc",
+      "id": "cCgxZTQsatI"
+    },
+    {
+      "name": "abc",
+      "email": "abc@gmail.com",
+      "password": "abc",
+      "id": "oWCaJJu7ygk"
+    },
+    {
+      "name": "kavy",
+      "email": "kavy@gmail.com",
+      "password": "kavy",
+      "id": "uq-hTuwBLoY"
+    },
+    {
+      "name": "abcde",
+      "email": "abcde@gmail.com",
+      "password": "abcde",
+      "id": "NJUdbtRhhS4"
+    }
+  ],
+  "cars": [
+    {
+      "id": "1",
+      "name": "Tata Harrier",
+      "price": 2500,
+      "image": "https://imgd.aeplcdn.com/664x374/n/cw/ec/139411/harrier-exterior-right-front-three-quarter-2.jpeg",
+      "type": "Automatic",
+      "brandImage": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Tata_logo.svg",
+      "city": "Ahmedabad",
+      "fueltype": "diesel",
+      "booked": true
+    },
+    {
+      "id": "2",
+      "name": "Hyundai Creta",
+      "price": 2200,
+      "image": "https://imgd.aeplcdn.com/664x374/n/cw/ec/106815/creta-exterior-right-front-three-quarter-5.jpeg",
+      "type": "Automatic",
+      "brandImage": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Hyundai_logo.svg",
+      "city": "Gandhinagar",
+      "fueltype": "petrol",
+      "booked": true
+    },
+    {
+      "id": "3",
+      "name": "Mahindra XUV700",
+      "price": 3000,
+      "image": "https://imgd.aeplcdn.com/664x374/n/cw/ec/42355/xuv700-exterior-right-front-three-quarter-3.jpeg",
+      "type": "Automatic",
+      "brandImage": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Mahindra_Rise_Logo.svg",
+      "city": "Surendranagar",
+      "fueltype": "diesel"
+    },
+    {
+      "id": "4",
+      "name": "Maruti Suzuki Swift",
+      "price": 1200,
+      "image": "https://imgd.aeplcdn.com/664x374/n/cw/ec/159099/swift-exterior-right-front-three-quarter.jpeg",
+      "type": "Manual",
+      "brandImage": "https://upload.wikimedia.org/wikipedia/commons/1/12/Suzuki_logo_2.svg",
+      "city": "Nadiad",
+      "fueltype": "petrol"
+    },
+    {
+      "id": "5",
+      "name": "Toyota Innova Hycross",
+      "price": 3500,
+      "image": "https://imgd.aeplcdn.com/664x374/n/cw/ec/131825/innova-hycross-exterior-right-front-three-quarter.jpeg",
+      "type": "Automatic",
+      "brandImage": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Toyota_carlogo.svg",
+      "city": "Anand",
+      "fueltype": "hybrid"
+    },
+    {
+      "id": "6",
+      "name": "Honda City",
+      "price": 2000,
+      "image": "https://imgd.aeplcdn.com/664x374/n/cw/ec/40535/city-exterior-right-front-three-quarter-2.jpeg",
+      "type": "Automatic",
+      "brandImage": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Honda-logo.svg",
+      "city": "Vadodara",
+      "fueltype": "petrol"
+    },
+    {
+      "id": "7",
+      "name": "Kia Seltos",
+      "price": 2300,
+      "image": "https://imgd.aeplcdn.com/664x374/n/cw/ec/144739/seltos-exterior-right-front-three-quarter.jpeg",
+      "type": "Automatic",
+      "brandImage": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Kia_logo.svg",
+      "city": "Mehsana",
+      "fueltype": "diesel"
+    },
+    {
+      "id": "8",
+      "name": "MG Hector",
+      "price": 2700,
+      "image": "https://imgd.aeplcdn.com/664x374/n/cw/ec/131823/hector-exterior-right-front-three-quarter.jpeg",
+      "type": "Automatic",
+      "brandImage": "https://upload.wikimedia.org/wikipedia/commons/7/7d/MG_Motor_logo.svg",
+      "city": "Kalol",
+      "fueltype": "hybrid"
+    },
+    {
+      "id": "9",
+      "name": "Skoda Slavia",
+      "price": 2100,
+      "image": "https://imgd.aeplcdn.com/664x374/n/cw/ec/134287/slavia-exterior-right-front-three-quarter.jpeg",
+      "type": "Manual",
+      "brandImage": "https://upload.wikimedia.org/wikipedia/commons/3/30/Skoda_Auto_logo.svg",
+      "city": "Sanand",
+      "fueltype": "petrol"
+    },
+    {
+      "id": "10",
+      "name": "Toyota Camry",
+      "price": 4000,
+      "image": "https://imgd.aeplcdn.com/664x374/n/cw/ec/107693/camry-exterior-right-front-three-quarter.jpeg",
+      "type": "Automatic",
+      "brandImage": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Toyota_carlogo.svg",
+      "city": "Ahmedabad",
+      "fueltype": "hybrid"
+    },
+    {
+      "id": "11",
+      "name": "Maruti Alto 800",
+      "price": 800,
+      "image": "https://imgd.aeplcdn.com/664x374/n/cw/ec/107543/alto-800-exterior-right-front-three-quarter.jpeg",
+      "type": "Manual",
+      "brandImage": "https://upload.wikimedia.org/wikipedia/commons/1/12/Suzuki_logo_2.svg",
+      "city": "Naroda",
+      "fueltype": "petrol"
+    },
+    {
+      "id": "12",
+      "name": "Hyundai Xcent",
+      "price": 1300,
+      "image": "https://imgd.aeplcdn.com/664x374/n/cw/ec/40548/xcent-exterior-right-front-three-quarter.jpeg",
+      "type": "Manual",
+      "brandImage": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Hyundai_logo.svg",
+      "city": "Bopal",
+      "fueltype": "diesel"
+    },
+    {
+      "id": "13",
+      "name": "Maruti WagonR",
+      "price": 1000,
+      "image": "https://imgd.aeplcdn.com/664x374/n/cw/ec/112933/wagon-r-exterior-right-front-three-quarter.jpeg",
+      "type": "Manual",
+      "brandImage": "https://upload.wikimedia.org/wikipedia/commons/1/12/Suzuki_logo_2.svg",
+      "city": "Chandkheda",
+      "fueltype": "petrol"
+    },
+    {
+      "id": "14",
+      "name": "Tata Tiago",
+      "price": 1100,
+      "image": "https://imgd.aeplcdn.com/664x374/n/cw/ec/134287/tiago-exterior-right-front-three-quarter.jpeg",
+      "type": "Manual",
+      "brandImage": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Tata_logo.svg",
+      "city": "Maninagar",
+      "fueltype": "petrol"
+    },
+    {
+      "id": "15",
+      "name": "Hyundai Grand i10",
+      "price": 1200,
+      "image": "https://imgd.aeplcdn.com/664x374/n/cw/ec/139719/grand-i10-exterior-right-front-three-quarter.jpeg",
+      "type": "Automatic",
+      "brandImage": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Hyundai_logo.svg",
+      "city": "Satellite",
+      "fueltype": "petrol"
+    },
+    {
+      "id": "16",
+      "name": "Maruti Dzire",
+      "price": 1400,
+      "image": "https://imgd.aeplcdn.com/664x374/n/cw/ec/115777/dzire-exterior-right-front-three-quarter.jpeg",
+      "type": "Manual",
+      "brandImage": "https://upload.wikimedia.org/wikipedia/commons/1/12/Suzuki_logo_2.svg",
+      "city": "Vastral",
+      "fueltype": "diesel"
+    },
+    {
+      "id": "17",
+      "name": "Tata Tigor",
+      "price": 1300,
+      "image": "https://imgd.aeplcdn.com/664x374/n/cw/ec/134287/tigor-exterior-right-front-three-quarter.jpeg",
+      "type": "Manual",
+      "brandImage": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Tata_logo.svg",
+      "city": "Isanpur",
+      "fueltype": "petrol"
+    },
+    {
+      "id": "18",
+      "name": "Renault Kwid",
+      "price": 900,
+      "image": "https://imgd.aeplcdn.com/664x374/n/cw/ec/40547/kwid-exterior-right-front-three-quarter.jpeg",
+      "type": "Manual",
+      "brandImage": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Renault_Logo.svg",
+      "city": "Gota",
+      "fueltype": "petrol"
+    },
+    {
+      "id": "19",
+      "name": "Hyundai Aura",
+      "price": 1350,
+      "image": "https://imgd.aeplcdn.com/664x374/n/cw/ec/106815/aura-exterior-right-front-three-quarter.jpeg",
+      "type": "Manual",
+      "brandImage": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Hyundai_logo.svg",
+      "city": "Paldi",
+      "fueltype": "diesel"
+    },
+    {
+      "id": "20",
+      "name": "Maruti Celerio",
+      "price": 950,
+      "image": "https://imgd.aeplcdn.com/664x374/n/cw/ec/139483/celerio-exterior-right-front-three-quarter.jpeg",
+      "type": "Automatic",
+      "brandImage": "https://upload.wikimedia.org/wikipedia/commons/1/12/Suzuki_logo_2.svg",
+      "city": "Thaltej",
+      "fueltype": "petrol"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

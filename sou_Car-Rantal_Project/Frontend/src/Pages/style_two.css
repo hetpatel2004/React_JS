@@ -1,0 +1,566 @@
+/* DARK THEME */
+body {
+  background-color: #0b0b0b !important;
+  color: #fff !important;
+}
+
+.cover_img {
+    height: 650px !important;
+    width: 100%;
+    object-fit: cover !important;
+}
+
+/* HERO OVERLAY */
+.hero-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+}
+
+/* YELLOW BUTTON */
+.yellow-btn {
+  background-color: #ffc107 !important;
+  border: none !important;
+  color: #000 !important;
+  font-weight: 600;
+}
+
+/* CATEGORY & BRAND IMAGE */
+.sec_one {
+  width: 100%;
+  height: 120px;
+}
+
+/* HOVER EFFECT */
+.hover-box {
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.hover-box:hover {
+  transform: translateY(-5px);
+}
+
+/* -------------------- CUSTOM CARD (IMPORTANT) -------------------- */
+
+/* CARD WRAPPER */
+.custom-card {
+  position: relative;
+}
+
+/* IMAGE */
+.custom-card-img img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* CONTENT BOX */
+.custom-card-body {
+  margin-top: -35px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* BRAND LOGO */
+.brand-logo {
+  width: 30px;
+  opacity: 0.7;
+}
+
+/* CARD HOVER */
+.custom-card:hover {
+  transform: translateY(-6px);
+  transition: 0.3s;
+}
+
+/* -------------------- LAST SECTION -------------------- */
+
+.last_sec {
+  height: 650px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.imgborder {
+  width: 100%;
+}
+
+/* REVIEW BOX */
+.last_secbox {
+  background-color: white;
+  width: 270px;
+  padding: 0 30px;
+}
+
+.last_secbox h4 {
+  color: yellow;
+  padding: 10px 0;
+}
+
+.last_secbox img {
+  width: 200px;
+  padding: 20px 0;
+}
+
+/* POSITIONING */
+.rev1 {
+  bottom: 40px;
+  left: 1200px;
+}
+
+.rev2 {
+  bottom: 40px;
+  left: 886px;
+}
+
+.rev3 {
+  bottom: 330px;
+  left: 44px;
+}
+
+.rev4 {
+  bottom: 330px;
+  left: 353px;
+}
+.card_hover img {
+    height: 250px !important;
+    object-fit: cover !important;
+    border-radius: 10px 10px 0 0 !important;
+}
+/* HERO */
+.hero-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+}
+
+/* HOVER EFFECT (minimal custom) */
+.hover-box {
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.hover-box:hover {
+  transform: translateY(-5px);
+}
+
+/* YELLOW BUTTON */
+.yellow-btn {
+  background-color: #ffc107 !important;
+  border: none !important;
+  color: #000 !important;
+  font-weight: 600;
+}
+.sec_one{
+  width: 100%;
+  height: 120px;
+  background-origin: content-box;
+}
+.luxury-card img {
+  border-radius: 16px;
+}
+
+.luxury-body {
+  margin-top: -40px;   /* THIS creates overlap */
+  border-radius: 16px;
+}
+
+.luxury-card:hover {
+  transform: translateY(-5px);
+  transition: 0.3s;
+}.custom-card {
+  position: relative;
+}
+
+/* IMAGE (smaller) */
+.custom-card-img img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* CONTENT BOX (bigger + overlap) */
+.custom-card-body {
+  position: relative;
+  margin-top: -10px;   /* main magic */
+  margin-left: 10px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  width: 95%;
+}
+
+/* LOGO */
+.brand-logo {
+  width: 30px;
+  opacity: 0.7;
+}
+
+/* HOVER EFFECT */
+.custom-card-body {
+  position: relative;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  overflow: hidden; /* ⭐ IMPORTANT */
+}
+
+/* TOP */
+.custom-card-body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: #000;
+  transition: 0.4s;
+  border-radius: 12px 12px 0 0; /* ⭐ */
+}
+
+/* RIGHT */
+.custom-card-body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 0;
+  background: #000;
+  transition: 0.4s 0.4s;
+  border-radius: 0 12px 12px 0; /* ⭐ */
+}
+
+/* BOTTOM */
+.custom-card-body span::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background: #000;
+  transition: 0.4s 0.8s;
+  border-radius: 0 0 12px 12px; /* ⭐ */
+}
+
+/* LEFT */
+.custom-card-body span::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  height: 0;
+  background: #000;
+  transition: 0.4s 1.2s;
+  border-radius: 12px 0 0 12px; /* ⭐ */
+}
+
+/* HOVER */
+.custom-card:hover .custom-card-body::before {
+  width: 100%;
+}
+
+.custom-card:hover .custom-card-body::after {
+  height: 100%;
+}
+
+.custom-card:hover .custom-card-body span::before {
+  width: 100%;
+}
+
+.custom-card:hover .custom-card-body span::after {
+  height: 100%;
+}
+
+
+
+
+
+
+.last_secbox {
+    background-color: white;
+    /* height: 250px; */
+    width: 270px;
+    border-radius: 10px;
+    padding: 0 30px;
+}
+.last_secbox h4{
+    color:yellow;
+    padding: 10px 0;
+}
+.last_secbox p{
+  color: black;
+}
+.last_secbox img{
+    /* height: 50px; */
+    width:  200px;
+    padding: 20px 0;
+}
+.rev1{
+   bottom: 40px;
+   left: 1200px;
+}
+.rev2{
+   bottom: 40px;
+   left: 886px;
+}
+.rev3{
+   bottom: 330px;
+   left: 44px;
+}
+.rev4{
+   bottom: 330px;
+   left: 353px;
+}
+
+.imgborder{
+    /* border-radius: px !important; */
+    width: 100%;
+}
+
+.banner-wrapper {
+  position: relative;
+  /* border-radius: 12px; */
+  overflow: hidden;
+}
+
+/* IMAGE */
+.banner-img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+/* BUTTON POSITION */
+.banner-btn {
+  position: absolute;
+  right: 150px;   /* move left/right */
+  bottom: 77px;  /* move up/down */
+  
+  background: #ffc107 !important;
+  border: none !important;
+  color: #000 !important;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 6px;
+}
+
+
+
+
+
+/* CARD BASE */
+.col-card {
+  background: #111;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;
+  position: relative;
+  border: 1px solid rgba(255, 255, 0, 0.2);
+}
+
+/* IMAGE */
+.img-full {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* SMALL HEIGHT (COLUMN 2 TOP/BOTTOM) */
+.small {
+  padding: 35px;
+}
+.White_text {
+  color: white !important;
+}
+/* YELLOW GLOW BORDER (RIGHT SIDE LOOK) */
+.col-card::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 80px;
+  height: 80px;
+  border-right: 2px solid #ffc107;
+  border-bottom: 2px solid #ffc107;
+  border-radius: 0 0 12px 0;
+}
+
+/* BUTTON STYLE */
+.btn-outline-light {
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.btn-outline-light:hover {
+  background: #ffc107;
+  color: #000;
+  border: none;
+}
+/* LEFT RIGHT SPACING (optional more control) */
+.row {
+  margin: 40px;
+}
+
+/* IMAGE FULL COVER */
+.img-full {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* COLUMN 2 TOP IMAGE FULL HEIGHT */
+.top-img {
+  height: 60%;   /* increase as needed */
+}
+
+/* COLUMN 2 BOTTOM */
+.small {
+  height: 40%;
+}
+
+
+
+
+
+
+
+.delivery-section {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* LEFT SIDE (DARK PANEL) */
+.left-side {
+  background: #111;
+  color: #fff;
+  padding: 60px;
+}
+
+.left-side .title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.left-side .desc {
+  color: #aaa;
+  margin-bottom: 30px;
+}
+
+/* CARD STYLE */
+.info-card {
+  display: flex;
+  gap: 15px;
+  background: #1a1a1a;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.icon-box {
+  width: 40px;
+  height: 40px;
+  background: #f5c518;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+/* RIGHT SIDE (MAP FULL) */
+.right-side {
+  position: relative;
+  height: 100vh;
+}
+
+.map-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* FLOATING CARD ON MAP */
+.map-card {
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  background: #111;
+  color: #fff;
+  padding: 20px 25px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.map-card h6 {
+  margin-bottom: 10px;
+}
+
+
+
+.user-layout {
+  display: flex;
+  background: #0b0b0b;
+  min-height: 100vh;
+  color: #fff;
+}
+
+/* SIDEBAR */
+.sidebar-theme {
+  width: 230px;
+  background: #111;
+  padding: 20px;
+  border-right: 1px solid #222;
+}
+
+.nav-item {
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+  color: #aaa;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-item:hover {
+  background: #ffc107;
+  color: #000;
+  transform: translateX(5px);
+}
+
+.nav-item.active {
+  background: #ffc107;
+  color: #000;
+  font-weight: bold;
+}
+
+.nav-item.logout {
+  margin-top: 30px;
+  background: #dc3545;
+  color: #fff;
+}
+
+.nav-item.logout:hover {
+  background: #bb2d3b;
+}
+
+/* MAIN */
+.main-theme {
+  flex: 1;
+  overflow-x: hidden;
+}
+
+/* FIX CONTENT WIDTH */
+.main-theme > * {
+  max-width: 100%;
+}
